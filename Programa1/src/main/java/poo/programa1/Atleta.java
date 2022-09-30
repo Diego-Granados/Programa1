@@ -4,12 +4,14 @@
  */
 package poo.programa1;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author dandi
  */
 public class Atleta extends Persona {
-    public Atleta(){
-    
+    public Atleta(String pNombre, String pApellido1, String pApellido2, String pId, String pPais, LocalDate pFecha, String pCorreo, String pTelefono){
+        super(pNombre, pApellido1, pApellido2, pId, pPais, pFecha, pCorreo, pTelefono);
     }
 }

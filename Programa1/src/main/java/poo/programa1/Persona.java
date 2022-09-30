@@ -48,7 +48,7 @@ public class Persona {
     public void setApellido2(String pApellido2){
         apellido2 = pApellido2;
     }
-    public String getApelllido2(){
+    public String getApellido2(){
         return apellido2;
     }
     public void setId(String pId){

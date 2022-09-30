@@ -10,13 +10,11 @@ package poo.programa1;
  */
 public class Prueba {
     private String nombre;
-    private String medida;
     private String categoria;
     private String genero;
     
-    public Prueba(String pNombre, String pMedida, String pCategoria, String pGenero){
+    public Prueba(String pNombre, String pCategoria, String pGenero){
         nombre = pNombre;
-        medida = pMedida;
         categoria = pCategoria;
         genero = pGenero;
     }
@@ -27,12 +25,7 @@ public class Prueba {
     public void setNombre(String pNombre){
         nombre = pNombre;
     }
-    public String getMedida(){
-        return medida;
-    }
-    public void setMedida(String pMedida){
-        medida = pMedida;
-    }
+    
     public String getCategoria(){
         return categoria;
     }
