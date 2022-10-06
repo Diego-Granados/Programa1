@@ -6,6 +6,7 @@ package poo.programa1;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import static poo.programa1.Persona.idList;
 
 /**
@@ -19,6 +20,10 @@ public class Competencia {
     private LocalDate fechafinal;
     private String pais;
     private String lugar;
+    private ArrayList<Disciplina> disciplinas;
+    private HashMap<Disciplina, ArrayList<Prueba>> disciplinasDict;
+    private ArrayList<Marca> marcas;
+    
     public Competencia(String pNombre, String pId, String pPais, String pLugar, LocalDate pFechainicio, LocalDate pFechafinal){
         nombre = pNombre;
         id = pId;
@@ -26,6 +31,8 @@ public class Competencia {
         lugar = pLugar;
         fechainicio = pFechainicio;
         fechafinal = pFechafinal;
+        disciplinas = new ArrayList<>();
+        disciplinasDict = new HashMap<>();
     }
     
     public void setNombre(String pNombre){
@@ -66,4 +73,22 @@ public class Competencia {
     public LocalDate getFechafinal(){
         return fechafinal;
     }
+    
+    public void agregarDisciplina(Disciplina pDisciplina){
+        disciplinas.add(pDisciplina);
+        disciplinasDict.put(pDisciplina, new ArrayList<Prueba>());
+    }
+    
+    public void agregarPrueba(Disciplina pDisciplina, Prueba pPrueba){
+        disciplinasDict.get(pDisciplina).add(pPrueba);
+    }
+    
+    public void agregarMarca(Atleta pAtleta, double pResultado, Prueba pPrueba){
+        Marca newMarca = new Marca(pAtleta, pResultado, pPrueba, this);
+        this.marcas.add(newMarca);
+        pPrueba.agregarMarca(newMarca);
+        pAtleta.agregarMarca(newMarca);
+    }
+    
+    
 }
