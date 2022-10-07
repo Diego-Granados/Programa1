@@ -4,7 +4,7 @@
  */
 package poo.programa1;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.time.LocalDate;
         
 /**
@@ -16,7 +16,7 @@ public class Persona {
     private String apellido1;
     private String apellido2;
     private String id;
-    protected static ArrayList<String> idList;
+    protected static HashMap<String, Persona> List;
     private LocalDate fecha;
     private String pais;
     private String correo;
@@ -26,7 +26,7 @@ public class Persona {
         apellido1 = pApellido1;
         apellido2 = pApellido2;
         id = pId;
-        idList = new ArrayList<>();
+        List = new HashMap();
         pais = pPais;
         correo = pCorreo;
         telefono = pTelefono;
@@ -78,8 +78,11 @@ public class Persona {
     public void setTelefono(String pTelefono){
         telefono = pTelefono;
     }
-    public ArrayList<String> getIdList(){
-        return idList;
+    public String getTelefono(){
+        return telefono;
+    }
+    public HashMap<String,Persona> getList(){
+        return List;
     }
     
     

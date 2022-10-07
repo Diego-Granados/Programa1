@@ -7,7 +7,7 @@ package poo.programa1;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
-import static poo.programa1.Persona.idList;
+import static poo.programa1.Persona.List;
 
 /**
  *
