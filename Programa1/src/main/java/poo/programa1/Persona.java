@@ -16,7 +16,7 @@ public class Persona {
     private String apellido1;
     private String apellido2;
     private String id;
-    public static HashMap<String, Persona> List;
+    public static HashMap<String, Persona> List = new HashMap<>();
     private LocalDate fecha;
     private String pais;
     private String correo;
@@ -26,11 +26,11 @@ public class Persona {
         apellido1 = pApellido1;
         apellido2 = pApellido2;
         id = pId;
-        List = new HashMap();
         pais = pPais;
         correo = pCorreo;
         telefono = pTelefono;
         fecha = pFecha;
+        List.put(pId, this);
     }
     
     public void setNombre(String pNombre){

@@ -276,14 +276,15 @@ public class AgregarAtleta extends javax.swing.JFrame {
                     "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        if (Atleta.List != null && Atleta.List.containsKey(pId)){
+        
+        if (!Atleta.List.isEmpty() && Atleta.List.containsKey(pId)){
             JOptionPane.showMessageDialog(this, "Ya hay un atleta registrado con esa identificación.", 
                     "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
         
         pPais = PaisTXT.getText();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         try {
             pFecha = LocalDate.parse(FechaTXT.getText(), formatter);
         }
@@ -306,7 +307,7 @@ public class AgregarAtleta extends javax.swing.JFrame {
         Atleta newAthlete = new Atleta( pNombre,  pApellido1,  pApellido2,  pId,  pPais,  pFecha,  pCorreo,  pTelefono);
         String successMessage = "Se creó un atleta con los parámetros " + pNombre + " " + pApellido1 + " " +  pApellido2 + " " +  pId + " " +  pPais + " " +  pFecha + " " +  pCorreo + " " +  pTelefono;
         JOptionPane.showMessageDialog(this, successMessage);
-        Atleta.List.put(pId,newAthlete);
+        // Atleta.List.put(pId,newAthlete);
      
     }//GEN-LAST:event_AceptarAtletaButtonActionPerformed
 
