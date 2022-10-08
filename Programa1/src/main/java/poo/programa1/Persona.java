@@ -16,7 +16,7 @@ public class Persona {
     private String apellido1;
     private String apellido2;
     private String id;
-    protected static HashMap<String, Persona> List;
+    public static HashMap<String, Persona> List;
     private LocalDate fecha;
     private String pais;
     private String correo;

@@ -1,7 +1,9 @@
-package poo.programa1;
+package poo.programa1.GUI;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import javax.swing.JOptionPane;
+import poo.programa1.Atleta;
 
 
 /*
@@ -16,20 +18,21 @@ import java.time.format.DateTimeFormatter;
         
         
 public class AgregarAtleta extends javax.swing.JFrame {
-    String pNombre;
-    String pApellido1;
-    String pApellido2;
-    String pId;
-    String pPais;
-    LocalDate pFecha;
-    String pCorreo;
-    String pTelefono;
+    private String pNombre;
+    private String pApellido1;
+    private String pApellido2;
+    private String pId;
+    private String pPais;
+    private LocalDate pFecha;
+    private String pCorreo;
+    private String pTelefono;
         
     /**
      * Creates new form AgregarAtleta
      */
     public AgregarAtleta() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -65,7 +68,6 @@ public class AgregarAtleta extends javax.swing.JFrame {
 
         AgregarAtletaTitle.setText("Agregar Atleta");
 
-        Apellido1TXT.setText("Apellido");
         Apellido1TXT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Apellido1TXTActionPerformed(evt);
@@ -88,49 +90,42 @@ public class AgregarAtleta extends javax.swing.JFrame {
 
         jLabel9.setText("Teléfono:");
 
-        NombreTXT.setText("Nombre");
         NombreTXT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NombreTXTActionPerformed(evt);
             }
         });
 
-        Apellido2TXT.setText("Apellido");
         Apellido2TXT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Apellido2TXTActionPerformed(evt);
             }
         });
 
-        IDTXT.setText("ID");
         IDTXT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 IDTXTActionPerformed(evt);
             }
         });
 
-        PaisTXT.setText("País");
         PaisTXT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PaisTXTActionPerformed(evt);
             }
         });
 
-        FechaTXT.setText("Fecha");
         FechaTXT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FechaTXTActionPerformed(evt);
             }
         });
 
-        CorreoTXT.setText("Correo");
         CorreoTXT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CorreoTXTActionPerformed(evt);
             }
         });
 
-        TelefonoTXT.setText("Teléfono");
         TelefonoTXT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TelefonoTXTActionPerformed(evt);
@@ -156,6 +151,32 @@ public class AgregarAtleta extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(NombreTXT, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addComponent(PaisTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Apellido1TXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(IDTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Apellido2TXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CancelarAtletaButton)
+                            .addComponent(AceptarAtletaButton))
+                        .addContainerGap(19, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(154, 154, 154)
@@ -168,31 +189,6 @@ public class AgregarAtleta extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(NombreTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(Apellido1TXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(IDTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(Apellido2TXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(CancelarAtletaButton)
-                                            .addComponent(AceptarAtletaButton)))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(PaisTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel8)
                             .addComponent(jLabel9))
                         .addGap(18, 18, 18)
@@ -201,6 +197,9 @@ public class AgregarAtleta extends javax.swing.JFrame {
                             .addComponent(CorreoTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(33, 33, 33))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {Apellido1TXT, Apellido2TXT, CorreoTXT, FechaTXT, IDTXT, NombreTXT, PaisTXT, TelefonoTXT});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -213,25 +212,25 @@ public class AgregarAtleta extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Apellido1TXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(AceptarAtletaButton))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Apellido2TXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(IDTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5)))
+                            .addComponent(jLabel5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(PaisTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6)))
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(AceptarAtletaButton)
                         .addGap(32, 32, 32)
                         .addComponent(CancelarAtletaButton)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PaisTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FechaTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -244,7 +243,7 @@ public class AgregarAtleta extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TelefonoTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(9, Short.MAX_VALUE))
         );
 
         pack();
@@ -252,7 +251,61 @@ public class AgregarAtleta extends javax.swing.JFrame {
 
     private void AceptarAtletaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarAtletaButtonActionPerformed
         // TODO add your handling code here:
+        pNombre = NombreTXT.getText();
+        System.out.println(pNombre + " "  + pNombre.length());
+        if (2 > pNombre.length() || pNombre.length() > 20){
+            JOptionPane.showMessageDialog(this, "El nombre debe tener una longitud de 2 a 20 caracteres", 
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        pApellido1 = Apellido1TXT.getText();
+        if (2 > pApellido1.length() || pApellido1.length() > 20){
+            JOptionPane.showMessageDialog(this, "El primer apellido debe tener una longitud de 2 a 20 caracteres", 
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        pApellido2 = Apellido2TXT.getText();
+        if (2 > pApellido2.length() || pApellido2.length() > 20){
+            JOptionPane.showMessageDialog(this, "El segundo apellido debe tener una longitud de 2 a 20 caracteres", 
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        pId = IDTXT.getText();
+        if (9 > pId.length() || pId.length() > 20){
+            JOptionPane.showMessageDialog(this, "La identificación debe tener una longitud de 9 a 20 caracteres", 
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (Atleta.List != null && Atleta.List.containsKey(pId)){
+            JOptionPane.showMessageDialog(this, "Ya hay un atleta registrado con esa identificación.", 
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        pPais = PaisTXT.getText();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        try {
+            pFecha = LocalDate.parse(FechaTXT.getText(), formatter);
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, "El formato de fecha es inválido.", 
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        pCorreo = CorreoTXT.getText();
+        // VALIDAR QUE EXISTA
+        
+        pTelefono = TelefonoTXT.getText();
+        if (pTelefono.length() != 20){
+            JOptionPane.showMessageDialog(this, "La identificación debe tener una longitud de 9 a 20 caracteres.", 
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
         Atleta newAthlete = new Atleta( pNombre,  pApellido1,  pApellido2,  pId,  pPais,  pFecha,  pCorreo,  pTelefono);
+        String successMessage = "Se creó un atleta con los parámetros " + pNombre + " " + pApellido1 + " " +  pApellido2 + " " +  pId + " " +  pPais + " " +  pFecha + " " +  pCorreo + " " +  pTelefono;
+        JOptionPane.showMessageDialog(this, successMessage);
         Atleta.List.put(pId,newAthlete);
      
     }//GEN-LAST:event_AceptarAtletaButtonActionPerformed
@@ -298,6 +351,9 @@ public class AgregarAtleta extends javax.swing.JFrame {
     private void CancelarAtletaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarAtletaButtonActionPerformed
         // TODO add your handling code here:
         //  Close
+        dispose();
+        MenuPrincipal menu = new MenuPrincipal();
+        menu.setVisible(true);
     }//GEN-LAST:event_CancelarAtletaButtonActionPerformed
 
     private void Apellido1TXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Apellido1TXTActionPerformed

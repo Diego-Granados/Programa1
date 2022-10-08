@@ -5,6 +5,7 @@
 package poo.programa1;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
@@ -14,6 +15,9 @@ public class Disciplina {
     private String nombre;
     private boolean tipo;
     private ArrayList<Prueba> pruebas;
+    
+    public static HashMap<String, Disciplina> disciplinas = new HashMap<>();
+    
     public Disciplina(String pNombre, boolean pTipo){
         nombre = pNombre;
         tipo = pTipo;
