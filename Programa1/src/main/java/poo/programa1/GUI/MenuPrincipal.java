@@ -24,12 +24,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate pFecha = LocalDate.parse("2003-07-04", formatter);
-        Atleta atl = new Atleta("Daniel", "Granados", "Retana", "118790544", "CRC", pFecha, 
-                "dandiego235@gmail.com", "11111111111111111111");
-        atl = new Atleta("Diego", "Granados", "Retana", "118790545", "CRC", pFecha, 
-                "dandiegogranados@gmail.com", "22222222222222222222");
-        
-        Visor vis = new Visor("Bebo", "Babich", "Bebé", "Bobo", "Bebe", pFecha, "babas", "babebibobubabebibobu");
+        if (!Atleta.List.containsKey("118790544")){
+            Atleta atl = new Atleta("Daniel", "Granados", "Retana", "118790544", "CRC", pFecha, 
+                    "dandiego235@gmail.com", "11111111111111111111");
+            atl = new Atleta("Diego", "Granados", "Retana", "118790545", "CRC", pFecha, 
+                    "dandiegogranados@gmail.com", "22222222222222222222");
+
+            Visor vis = new Visor("Bebo", "Babich", "Bebé", "Bobo", "Bebe", pFecha, "babas", "babebibobubabebibobu");   
+        }
     }
 
     /**
@@ -157,6 +159,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
 
         AtletaActualizar.setText("Actualizar");
+        AtletaActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AtletaActualizarActionPerformed(evt);
+            }
+        });
 
         AtletaEliminar.setText("Eliminar");
 
@@ -345,6 +352,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void MarcaConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MarcaConsultarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_MarcaConsultarActionPerformed
+
+    private void AtletaActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtletaActualizarActionPerformed
+        // TODO add your handling code here:
+        System.out.println("Actualizar Atleta Button Pressed.");
+        dispose();
+        ActualizarAtleta window = new ActualizarAtleta();
+        window.setVisible(true);
+    }//GEN-LAST:event_AtletaActualizarActionPerformed
 
     /**
      * @param args the command line arguments

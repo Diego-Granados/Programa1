@@ -17,22 +17,38 @@ import poo.programa1.Atleta;
  */
         
         
-public class AgregarAtleta extends javax.swing.JFrame {
+public class ActualizarAtleta extends javax.swing.JFrame {
     private String pNombre;
     private String pApellido1;
     private String pApellido2;
-    private String pId;
     private String pPais;
     private LocalDate pFecha;
     private String pCorreo;
     private String pTelefono;
-        
+
+    // método que rellena el ComboBox con las identificaciones de los atletas registrados.
+    private void fillComboAtletas(){
+        Atleta.List.forEach((key, value) -> {
+            if (value instanceof Atleta){
+                listaAtletas.addItem(key);
+            }
+        });
+    }    
     /**
      * Creates new form AgregarAtleta
      */
-    public AgregarAtleta() {
+    public ActualizarAtleta(){
         initComponents();
         this.setLocationRelativeTo(null);
+        fillComboAtletas();
+        listaAtletas.setSelectedItem(null);
+        NombreTXT.setText("");
+        Apellido1TXT.setText("");
+        Apellido2TXT.setText("");
+        PaisTXT.setText("");
+        FechaTXT.setText("");
+        CorreoTXT.setText("");
+        TelefonoTXT.setText("");
     }
 
     /**
@@ -56,17 +72,17 @@ public class AgregarAtleta extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         NombreTXT = new javax.swing.JTextField();
         Apellido2TXT = new javax.swing.JTextField();
-        IDTXT = new javax.swing.JTextField();
         PaisTXT = new javax.swing.JTextField();
         FechaTXT = new javax.swing.JTextField();
         CorreoTXT = new javax.swing.JTextField();
         TelefonoTXT = new javax.swing.JTextField();
         AceptarAtletaButton = new javax.swing.JButton();
         CancelarAtletaButton = new javax.swing.JButton();
+        listaAtletas = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        AgregarAtletaTitle.setText("Agregar Atleta");
+        AgregarAtletaTitle.setText("Actualizar atleta");
 
         Apellido1TXT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,12 +115,6 @@ public class AgregarAtleta extends javax.swing.JFrame {
         Apellido2TXT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Apellido2TXTActionPerformed(evt);
-            }
-        });
-
-        IDTXT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IDTXTActionPerformed(evt);
             }
         });
 
@@ -146,6 +156,12 @@ public class AgregarAtleta extends javax.swing.JFrame {
             }
         });
 
+        listaAtletas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listaAtletasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -153,94 +169,94 @@ public class AgregarAtleta extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(NombreTXT, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(jLabel6)
+                        .addGap(39, 39, 39)
+                        .addComponent(PaisTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FechaTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(2, 2, 2)
-                                .addComponent(PaisTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(Apellido1TXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(IDTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Apellido2TXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel9))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CancelarAtletaButton)
-                            .addComponent(AceptarAtletaButton))
-                        .addContainerGap(19, Short.MAX_VALUE))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(154, 154, 154)
-                .addComponent(AgregarAtletaTitle))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(FechaTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(TelefonoTXT, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                            .addComponent(CorreoTXT)))
+                    .addComponent(jLabel5)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel3)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Apellido1TXT))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel4)
+                                .addComponent(jLabel2))
+                            .addGap(18, 18, 18)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(NombreTXT, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                                .addComponent(Apellido2TXT, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(listaAtletas, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(TelefonoTXT, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                    .addComponent(CorreoTXT)))
+                    .addComponent(AceptarAtletaButton)
+                    .addComponent(CancelarAtletaButton))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(AgregarAtletaTitle)
+                .addGap(204, 204, 204))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {Apellido1TXT, Apellido2TXT, FechaTXT, IDTXT, NombreTXT, PaisTXT});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {Apellido1TXT, Apellido2TXT, CorreoTXT, FechaTXT, NombreTXT, PaisTXT, TelefonoTXT});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(7, 7, 7)
                 .addComponent(AgregarAtletaTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(NombreTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Apellido1TXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jLabel5)
+                    .addComponent(listaAtletas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(AceptarAtletaButton)
+                        .addGap(34, 34, 34)
+                        .addComponent(CancelarAtletaButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(NombreTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Apellido1TXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Apellido2TXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(IDTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(12, 12, 12)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(PaisTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(AceptarAtletaButton)
-                        .addGap(32, 32, 32)
-                        .addComponent(CancelarAtletaButton)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(FechaTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CorreoTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TelefonoTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
-                .addContainerGap(9, Short.MAX_VALUE))
+                            .addComponent(jLabel6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(FechaTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(CorreoTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(TelefonoTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9))))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
 
         pack();
@@ -248,6 +264,8 @@ public class AgregarAtleta extends javax.swing.JFrame {
 
     private void AceptarAtletaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarAtletaButtonActionPerformed
         // TODO add your handling code here:
+        String id = (String) listaAtletas.getSelectedItem();
+        Atleta atleta = (Atleta) Atleta.List.get(id);
         pNombre = NombreTXT.getText();
         System.out.println(pNombre + " "  + pNombre.length());
         if (2 > pNombre.length() || pNombre.length() > 20){
@@ -255,6 +273,7 @@ public class AgregarAtleta extends javax.swing.JFrame {
                     "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
+        
         pApellido1 = Apellido1TXT.getText();
         if (2 > pApellido1.length() || pApellido1.length() > 20){
             JOptionPane.showMessageDialog(this, "El primer apellido debe tener una longitud de 2 a 20 caracteres", 
@@ -264,18 +283,6 @@ public class AgregarAtleta extends javax.swing.JFrame {
         pApellido2 = Apellido2TXT.getText();
         if (2 > pApellido2.length() || pApellido2.length() > 20){
             JOptionPane.showMessageDialog(this, "El segundo apellido debe tener una longitud de 2 a 20 caracteres", 
-                    "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        pId = IDTXT.getText();
-        if (9 > pId.length() || pId.length() > 20){
-            JOptionPane.showMessageDialog(this, "La identificación debe tener una longitud de 9 a 20 caracteres", 
-                    "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        
-        if (!Atleta.List.isEmpty() && Atleta.List.containsKey(pId)){
-            JOptionPane.showMessageDialog(this, "Ya hay un atleta registrado con esa identificación.", 
                     "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
@@ -301,8 +308,14 @@ public class AgregarAtleta extends javax.swing.JFrame {
             return;
         }
         
-        Atleta newAthlete = new Atleta( pNombre,  pApellido1,  pApellido2,  pId,  pPais,  pFecha,  pCorreo,  pTelefono);
-        String successMessage = "Se creó un atleta con los parámetros " + pNombre + " " + pApellido1 + " " +  pApellido2 + " " +  pId + " " +  pPais + " " +  pFecha + " " +  pCorreo + " " +  pTelefono;
+        atleta.setNombre(pNombre);
+        atleta.setApellido1(pApellido1);
+        atleta.setApellido2(pApellido2);
+        atleta.setCorreo(pCorreo);
+        atleta.setFecha(pFecha);
+        atleta.setPais(pPais);
+        atleta.setTelefono(pTelefono);
+        String successMessage = "¡Atleta actualizado con éxito!";
         JOptionPane.showMessageDialog(this, successMessage);
      
     }//GEN-LAST:event_AceptarAtletaButtonActionPerformed
@@ -316,11 +329,6 @@ public class AgregarAtleta extends javax.swing.JFrame {
         // TODO add your handling code here:
         pApellido2 = Apellido2TXT.getText();
     }//GEN-LAST:event_Apellido2TXTActionPerformed
-
-    private void IDTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDTXTActionPerformed
-        // TODO add your handling code here:
-        pId = IDTXT.getText();
-    }//GEN-LAST:event_IDTXTActionPerformed
 
     private void PaisTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PaisTXTActionPerformed
         // TODO add your handling code here:
@@ -358,6 +366,22 @@ public class AgregarAtleta extends javax.swing.JFrame {
         pApellido1 = Apellido1TXT.getText();
     }//GEN-LAST:event_Apellido1TXTActionPerformed
 
+    private void listaAtletasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaAtletasActionPerformed
+        // TODO add your handling code here:
+        String id = (String) listaAtletas.getSelectedItem();
+        Atleta atleta = (Atleta) Atleta.List.get(id);
+        if (atleta == null){
+            return;
+        }
+        NombreTXT.setText(atleta.getNombre());
+        Apellido1TXT.setText(atleta.getApellido1());
+        Apellido2TXT.setText(atleta.getApellido2());
+        PaisTXT.setText(atleta.getPais());
+        FechaTXT.setText(atleta.getFecha().toString());
+        CorreoTXT.setText(atleta.getCorreo());
+        TelefonoTXT.setText(atleta.getTelefono());
+    }//GEN-LAST:event_listaAtletasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -365,7 +389,7 @@ public class AgregarAtleta extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AgregarAtleta().setVisible(true);
+                new ActualizarAtleta().setVisible(true);
             }
         });
     }
@@ -378,7 +402,6 @@ public class AgregarAtleta extends javax.swing.JFrame {
     private javax.swing.JButton CancelarAtletaButton;
     private javax.swing.JTextField CorreoTXT;
     private javax.swing.JTextField FechaTXT;
-    private javax.swing.JTextField IDTXT;
     private javax.swing.JTextField NombreTXT;
     private javax.swing.JTextField PaisTXT;
     private javax.swing.JTextField TelefonoTXT;
@@ -390,5 +413,6 @@ public class AgregarAtleta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JComboBox<String> listaAtletas;
     // End of variables declaration//GEN-END:variables
 }
