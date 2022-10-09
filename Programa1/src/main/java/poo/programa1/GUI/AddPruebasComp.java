@@ -4,19 +4,50 @@
  */
 package poo.programa1.GUI;
 
+import java.util.Map;
+import poo.programa1.*;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 /**
  *
  * @author dandi
  */
 public class AddPruebasComp extends javax.swing.JFrame {
-
+     private Disciplina disciplina;
+     private Competencia competencia;
+     private Prueba prueba;
      /**
-      * Creates new form AddPruebasComp
+      * Creates new form AddDisciplinasComp
       */
      public AddPruebasComp() {
           initComponents();
+          FillComboDisciplinas();
+          ComboDisciplinas.setSelectedItem(null);
+          FillComboCompetencias();
+          ComboCompetencias.setSelectedItem(null);
      }
-
+     
+     private void FillComboDisciplinas(){
+          for(Map.Entry entry : competencia.disciplinasDict.entrySet()){
+               Object Items = entry.getKey();
+               ComboDisciplinas.addItem((String) Items);
+          }
+     }
+     
+     private void FillComboCompetencias(){
+          for(Map.Entry entry : Competencia.competencias.entrySet()){
+               Object Items = entry.getKey();
+               ComboCompetencias.addItem((String) Items);
+          }
+     }
+     
+     private void FillComboPruebas(){
+          for(Map.Entry entry : competencia.disciplinasDict.entrySet()){
+               Object Items = entry.getKey();
+               ComboCompetencias.addItem((String) Items);
+          }
+     }
+     
      /**
       * This method is called from within the constructor to initialize the
       * form. WARNING: Do NOT modify this code. The content of this method is
@@ -45,6 +76,12 @@ public class AddPruebasComp extends javax.swing.JFrame {
           jLabel3.setText("Prueba");
 
           jLabel4.setText("Disciplina");
+
+          ComboCompetencias.addActionListener(new java.awt.event.ActionListener() {
+               public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    ComboCompetenciasActionPerformed(evt);
+               }
+          });
 
           AceptarButton.setText("Aceptar");
 
@@ -104,6 +141,10 @@ public class AddPruebasComp extends javax.swing.JFrame {
 
           pack();
      }// </editor-fold>//GEN-END:initComponents
+
+     private void ComboCompetenciasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboCompetenciasActionPerformed
+          // TODO add your handling code here:
+     }//GEN-LAST:event_ComboCompetenciasActionPerformed
 
      /**
       * @param args the command line arguments
