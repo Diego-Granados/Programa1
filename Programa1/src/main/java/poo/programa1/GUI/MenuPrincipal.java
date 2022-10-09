@@ -1,8 +1,9 @@
+package poo.programa1.GUI;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package poo.programa1.GUI;
+
 
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
@@ -46,7 +47,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
     
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
@@ -141,11 +142,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
 
         CompetenciaActualizar.setText("Actualizar");
-        CompetenciaActualizar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CompetenciaActualizarActionPerformed(evt);
-            }
-        });
 
         CompetenciaEliminar.setText("Eliminar");
 
@@ -203,40 +199,48 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(28, 28, 28)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(28, 28, 28)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(AtletaAgregar, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(PruebaAgregar))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(DisciplinaAgregar)
+                                        .addGap(37, 37, 37)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(AtletaConsultar)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(DisciplinaConsultar)
+                                                .addComponent(PruebaConsultar)))
+                                        .addGap(38, 38, 38)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(AtletaActualizar, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(PruebaActualizar)
+                                            .addComponent(DisciplinaActualizar))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(CompetenciaAgregar)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(110, 110, 110)
+                                        .addComponent(CompetenciaConsultar)
+                                        .addGap(38, 38, 38)
+                                        .addComponent(CompetenciaActualizar)))
+                                .addGap(37, 37, 37)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(AtletaAgregar, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(PruebaAgregar))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(DisciplinaAgregar)
-                                .addGap(37, 37, 37)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(AtletaConsultar)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(DisciplinaConsultar)
-                                        .addComponent(PruebaConsultar)))
-                                .addGap(38, 38, 38)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(AtletaActualizar, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(PruebaActualizar)
-                                    .addComponent(DisciplinaActualizar))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(CompetenciaAgregar)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(110, 110, 110)
-                                .addComponent(CompetenciaConsultar)
-                                .addGap(38, 38, 38)
-                                .addComponent(CompetenciaActualizar)))
-                        .addGap(37, 37, 37))
+                            .addComponent(PruebaEliminar)
+                            .addComponent(AtletaEliminar)
+                            .addComponent(DisciplinaEliminar)
+                            .addComponent(CompetenciaEliminar))
+                        .addGap(18, 18, 18))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(28, 28, 28)
@@ -245,14 +249,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
                         .addComponent(MarcaConsultar)
                         .addGap(36, 36, 36)
                         .addComponent(MarcaActualizar)
-                        .addGap(34, 34, 34)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PruebaEliminar)
-                    .addComponent(AtletaEliminar)
-                    .addComponent(DisciplinaEliminar)
-                    .addComponent(CompetenciaEliminar)
-                    .addComponent(MarcaEliminar))
-                .addGap(18, 18, 18))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(MarcaEliminar)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -302,74 +301,66 @@ public class MenuPrincipal extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
-    private void PruebaAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PruebaAgregarActionPerformed
+    private void PruebaAgregarActionPerformed(java.awt.event.ActionEvent evt) {                                              
         // TODO add your handling code here:
-        System.out.println("Agregar Prueba Button Pressed.");
-        dispose();
-        AgregarPrueba agregarPruebaW = new AgregarPrueba();
-        agregarPruebaW.setVisible(true);
-    }//GEN-LAST:event_PruebaAgregarActionPerformed
+    }                                             
 
-    private void PruebaConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PruebaConsultarActionPerformed
+    private void PruebaConsultarActionPerformed(java.awt.event.ActionEvent evt) {                                                
         // TODO add your handling code here:
-    }//GEN-LAST:event_PruebaConsultarActionPerformed
+    }                                               
 
-    private void DisciplinaAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisciplinaAgregarActionPerformed
+    private void DisciplinaAgregarActionPerformed(java.awt.event.ActionEvent evt) {                                                  
         // TODO add your handling code here:
         System.out.println("Agregar Disciplina Button Pressed.");
         dispose();
         AgregarDisciplina agregarDisciplinaW = new AgregarDisciplina();
         agregarDisciplinaW.setVisible(true);
-    }//GEN-LAST:event_DisciplinaAgregarActionPerformed
+    }                                                 
 
-    private void DisciplinaConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisciplinaConsultarActionPerformed
+    private void DisciplinaConsultarActionPerformed(java.awt.event.ActionEvent evt) {                                                    
         // TODO add your handling code here:
-    }//GEN-LAST:event_DisciplinaConsultarActionPerformed
+    }                                                   
 
-    private void CompetenciaAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompetenciaAgregarActionPerformed
+    private void CompetenciaAgregarActionPerformed(java.awt.event.ActionEvent evt) {                                                   
         // TODO add your handling code here:
-        System.out.println("Agregar Competencia Button Pressed.");
-        dispose();
-        AgregarCompetencia agregarCompetenciaW = new AgregarCompetencia();
-        agregarCompetenciaW.setVisible(true);
-    }//GEN-LAST:event_CompetenciaAgregarActionPerformed
+    }                                                  
 
-    private void CompetenciaConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompetenciaConsultarActionPerformed
+    private void CompetenciaConsultarActionPerformed(java.awt.event.ActionEvent evt) {                                                     
         // TODO add your handling code here:
-    }//GEN-LAST:event_CompetenciaConsultarActionPerformed
+    }                                                    
 
-    private void AtletaAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtletaAgregarActionPerformed
+    private void AtletaAgregarActionPerformed(java.awt.event.ActionEvent evt) {                                              
         System.out.println("Agregar Atleta Button Pressed.");
         dispose();
         AgregarAtleta agregarAtletaW = new AgregarAtleta();
         agregarAtletaW.setVisible(true);
-    }//GEN-LAST:event_AtletaAgregarActionPerformed
+    }                                             
 
-    private void AtletaConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtletaConsultarActionPerformed
+    private void AtletaConsultarActionPerformed(java.awt.event.ActionEvent evt) {                                                
         // TODO add your handling code here:
         System.out.println("Consultar Atleta Button Pressed.");
         dispose();
         ConsultarAtleta window = new ConsultarAtleta();
         window.setVisible(true);
-    }//GEN-LAST:event_AtletaConsultarActionPerformed
+    }                                               
 
-    private void MarcaAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MarcaAgregarActionPerformed
+    private void MarcaAgregarActionPerformed(java.awt.event.ActionEvent evt) {                                             
         // TODO add your handling code here:
-    }//GEN-LAST:event_MarcaAgregarActionPerformed
+    }                                            
 
-    private void MarcaConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MarcaConsultarActionPerformed
+    private void MarcaConsultarActionPerformed(java.awt.event.ActionEvent evt) {                                               
         // TODO add your handling code here:
-    }//GEN-LAST:event_MarcaConsultarActionPerformed
+    }                                              
 
-    private void AtletaActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtletaActualizarActionPerformed
+    private void AtletaActualizarActionPerformed(java.awt.event.ActionEvent evt) {                                                 
         // TODO add your handling code here:
         System.out.println("Actualizar Atleta Button Pressed.");
         dispose();
         ActualizarAtleta window = new ActualizarAtleta();
         window.setVisible(true);
-    }//GEN-LAST:event_AtletaActualizarActionPerformed
+    }                                                
 
     /**
      * @param args the command line arguments
@@ -406,7 +397,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JButton AtletaActualizar;
     private javax.swing.JButton AtletaAgregar;
     private javax.swing.JButton AtletaConsultar;
@@ -433,5 +424,5 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }
