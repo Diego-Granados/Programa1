@@ -46,117 +46,122 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
     
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        PruebaAgregar = new javax.swing.JButton();
-        PruebaConsultar = new javax.swing.JButton();
-        PruebaActualizar = new javax.swing.JButton();
-        PruebaEliminar = new javax.swing.JButton();
-        DisciplinaAgregar = new javax.swing.JButton();
-        DisciplinaConsultar = new javax.swing.JButton();
-        DisciplinaActualizar = new javax.swing.JButton();
-        DisciplinaEliminar = new javax.swing.JButton();
-        CompetenciaAgregar = new javax.swing.JButton();
-        CompetenciaConsultar = new javax.swing.JButton();
-        CompetenciaActualizar = new javax.swing.JButton();
-        CompetenciaEliminar = new javax.swing.JButton();
-        AtletaAgregar = new javax.swing.JButton();
-        AtletaConsultar = new javax.swing.JButton();
-        AtletaActualizar = new javax.swing.JButton();
-        AtletaEliminar = new javax.swing.JButton();
-        MarcaAgregar = new javax.swing.JButton();
-        MarcaConsultar = new javax.swing.JButton();
-        MarcaActualizar = new javax.swing.JButton();
-        MarcaEliminar = new javax.swing.JButton();
+          jLabel1 = new javax.swing.JLabel();
+          jLabel2 = new javax.swing.JLabel();
+          jLabel3 = new javax.swing.JLabel();
+          jLabel4 = new javax.swing.JLabel();
+          jLabel5 = new javax.swing.JLabel();
+          jLabel6 = new javax.swing.JLabel();
+          PruebaAgregar = new javax.swing.JButton();
+          PruebaConsultar = new javax.swing.JButton();
+          PruebaActualizar = new javax.swing.JButton();
+          PruebaEliminar = new javax.swing.JButton();
+          DisciplinaAgregar = new javax.swing.JButton();
+          DisciplinaConsultar = new javax.swing.JButton();
+          DisciplinaActualizar = new javax.swing.JButton();
+          DisciplinaEliminar = new javax.swing.JButton();
+          CompetenciaAgregar = new javax.swing.JButton();
+          CompetenciaConsultar = new javax.swing.JButton();
+          CompetenciaActualizar = new javax.swing.JButton();
+          CompetenciaEliminar = new javax.swing.JButton();
+          AtletaAgregar = new javax.swing.JButton();
+          AtletaConsultar = new javax.swing.JButton();
+          AtletaActualizar = new javax.swing.JButton();
+          AtletaEliminar = new javax.swing.JButton();
+          MarcaAgregar = new javax.swing.JButton();
+          MarcaConsultar = new javax.swing.JButton();
+          MarcaActualizar = new javax.swing.JButton();
+          MarcaEliminar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+          setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Menú Principal");
+          jLabel1.setText("Menú Principal");
 
-        jLabel2.setText("Disciplinas");
+          jLabel2.setText("Disciplinas");
 
-        jLabel3.setText("Pruebas");
+          jLabel3.setText("Pruebas");
 
-        jLabel4.setText("Atletas");
+          jLabel4.setText("Atletas");
 
-        jLabel5.setText("Competencias");
+          jLabel5.setText("Competencias");
 
-        jLabel6.setText("Marcas");
+          jLabel6.setText("Marcas");
 
-        PruebaAgregar.setText("Agregar");
-        PruebaAgregar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PruebaAgregarActionPerformed(evt);
-            }
-        });
+          PruebaAgregar.setText("Agregar");
+          PruebaAgregar.addActionListener(new java.awt.event.ActionListener() {
+               public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    PruebaAgregarActionPerformed(evt);
+               }
+          });
 
-        PruebaConsultar.setText("Consultar");
-        PruebaConsultar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PruebaConsultarActionPerformed(evt);
-            }
-        });
+          PruebaConsultar.setText("Consultar");
+          PruebaConsultar.addActionListener(new java.awt.event.ActionListener() {
+               public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    PruebaConsultarActionPerformed(evt);
+               }
+          });
 
-        PruebaActualizar.setText("Actualizar");
+          PruebaActualizar.setText("Actualizar");
 
-        PruebaEliminar.setText("Eliminar");
+          PruebaEliminar.setText("Eliminar");
 
-        DisciplinaAgregar.setText("Agregar");
-        DisciplinaAgregar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DisciplinaAgregarActionPerformed(evt);
-            }
-        });
+          DisciplinaAgregar.setText("Agregar");
+          DisciplinaAgregar.addActionListener(new java.awt.event.ActionListener() {
+               public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    DisciplinaAgregarActionPerformed(evt);
+               }
+          });
 
-        DisciplinaConsultar.setText("Consultar");
-        DisciplinaConsultar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DisciplinaConsultarActionPerformed(evt);
-            }
-        });
+          DisciplinaConsultar.setText("Consultar");
+          DisciplinaConsultar.addActionListener(new java.awt.event.ActionListener() {
+               public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    DisciplinaConsultarActionPerformed(evt);
+               }
+          });
 
-        DisciplinaActualizar.setText("Actualizar");
+          DisciplinaActualizar.setText("Actualizar");
 
-        DisciplinaEliminar.setText("Eliminar");
+          DisciplinaEliminar.setText("Eliminar");
 
-        CompetenciaAgregar.setText("Agregar");
-        CompetenciaAgregar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CompetenciaAgregarActionPerformed(evt);
-            }
-        });
+          CompetenciaAgregar.setText("Agregar");
+          CompetenciaAgregar.addActionListener(new java.awt.event.ActionListener() {
+               public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    CompetenciaAgregarActionPerformed(evt);
+               }
+          });
 
-        CompetenciaConsultar.setText("Consultar");
-        CompetenciaConsultar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CompetenciaConsultarActionPerformed(evt);
-            }
-        });
+          CompetenciaConsultar.setText("Consultar");
+          CompetenciaConsultar.addActionListener(new java.awt.event.ActionListener() {
+               public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    CompetenciaConsultarActionPerformed(evt);
+               }
+          });
 
-        CompetenciaActualizar.setText("Actualizar");
+          CompetenciaActualizar.setText("Actualizar");
+          CompetenciaActualizar.addActionListener(new java.awt.event.ActionListener() {
+               public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    CompetenciaActualizarActionPerformed(evt);
+               }
+          });
 
-        CompetenciaEliminar.setText("Eliminar");
+          CompetenciaEliminar.setText("Eliminar");
 
-        AtletaAgregar.setText("Agregar");
-        AtletaAgregar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AtletaAgregarActionPerformed(evt);
-            }
-        });
+          AtletaAgregar.setText("Agregar");
+          AtletaAgregar.addActionListener(new java.awt.event.ActionListener() {
+               public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    AtletaAgregarActionPerformed(evt);
+               }
+          });
 
-        AtletaConsultar.setText("Consultar");
-        AtletaConsultar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AtletaConsultarActionPerformed(evt);
-            }
-        });
+          AtletaConsultar.setText("Consultar");
+          AtletaConsultar.addActionListener(new java.awt.event.ActionListener() {
+               public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    AtletaConsultarActionPerformed(evt);
+               }
+          });
 
         AtletaActualizar.setText("Actualizar");
         AtletaActualizar.addActionListener(new java.awt.event.ActionListener() {
@@ -165,25 +170,25 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        AtletaEliminar.setText("Eliminar");
+          AtletaEliminar.setText("Eliminar");
 
-        MarcaAgregar.setText("Agregar");
-        MarcaAgregar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MarcaAgregarActionPerformed(evt);
-            }
-        });
+          MarcaAgregar.setText("Agregar");
+          MarcaAgregar.addActionListener(new java.awt.event.ActionListener() {
+               public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    MarcaAgregarActionPerformed(evt);
+               }
+          });
 
-        MarcaConsultar.setText("Consultar");
-        MarcaConsultar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MarcaConsultarActionPerformed(evt);
-            }
-        });
+          MarcaConsultar.setText("Consultar");
+          MarcaConsultar.addActionListener(new java.awt.event.ActionListener() {
+               public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    MarcaConsultarActionPerformed(evt);
+               }
+          });
 
-        MarcaActualizar.setText("Actualizar");
+          MarcaActualizar.setText("Actualizar");
 
-        MarcaEliminar.setText("Eliminar");
+          MarcaEliminar.setText("Eliminar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -275,12 +280,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel5)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(CompetenciaAgregar)
-                        .addComponent(CompetenciaActualizar)
-                        .addComponent(CompetenciaConsultar)
-                        .addComponent(CompetenciaEliminar)))
-                .addGap(52, 52, 52)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                         .addComponent(jLabel2)
+                         .addComponent(DisciplinaConsultar)
+                         .addComponent(DisciplinaAgregar)
+                         .addComponent(DisciplinaActualizar)
+                         .addComponent(DisciplinaEliminar))
+                    .addGap(60, 60, 60)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel4)
                         .addComponent(AtletaAgregar)
@@ -299,11 +304,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
+          pack();
+     }// </editor-fold>//GEN-END:initComponents
 
     private void PruebaAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PruebaAgregarActionPerformed
         // TODO add your handling code here:
+        System.out.println("Agregar Prueba Button Pressed.");
+        dispose();
+        AgregarPrueba agregarPruebaW = new AgregarPrueba();
+        agregarPruebaW.setVisible(true);
     }//GEN-LAST:event_PruebaAgregarActionPerformed
 
     private void PruebaConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PruebaConsultarActionPerformed
@@ -324,6 +333,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void CompetenciaAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompetenciaAgregarActionPerformed
         // TODO add your handling code here:
+        System.out.println("Agregar Competencia Button Pressed.");
+        dispose();
+        AgregarCompetencia agregarCompetenciaW = new AgregarCompetencia();
+        agregarCompetenciaW.setVisible(true);
     }//GEN-LAST:event_CompetenciaAgregarActionPerformed
 
     private void CompetenciaConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompetenciaConsultarActionPerformed
@@ -396,32 +409,32 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AtletaActualizar;
-    private javax.swing.JButton AtletaAgregar;
-    private javax.swing.JButton AtletaConsultar;
-    private javax.swing.JButton AtletaEliminar;
-    private javax.swing.JButton CompetenciaActualizar;
-    private javax.swing.JButton CompetenciaAgregar;
-    private javax.swing.JButton CompetenciaConsultar;
-    private javax.swing.JButton CompetenciaEliminar;
-    private javax.swing.JButton DisciplinaActualizar;
-    private javax.swing.JButton DisciplinaAgregar;
-    private javax.swing.JButton DisciplinaConsultar;
-    private javax.swing.JButton DisciplinaEliminar;
-    private javax.swing.JButton MarcaActualizar;
-    private javax.swing.JButton MarcaAgregar;
-    private javax.swing.JButton MarcaConsultar;
-    private javax.swing.JButton MarcaEliminar;
-    private javax.swing.JButton PruebaActualizar;
-    private javax.swing.JButton PruebaAgregar;
-    private javax.swing.JButton PruebaConsultar;
-    private javax.swing.JButton PruebaEliminar;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    // End of variables declaration//GEN-END:variables
+     // Variables declaration - do not modify//GEN-BEGIN:variables
+     private javax.swing.JButton AtletaActualizar;
+     private javax.swing.JButton AtletaAgregar;
+     private javax.swing.JButton AtletaConsultar;
+     private javax.swing.JButton AtletaEliminar;
+     private javax.swing.JButton CompetenciaActualizar;
+     private javax.swing.JButton CompetenciaAgregar;
+     private javax.swing.JButton CompetenciaConsultar;
+     private javax.swing.JButton CompetenciaEliminar;
+     private javax.swing.JButton DisciplinaActualizar;
+     private javax.swing.JButton DisciplinaAgregar;
+     private javax.swing.JButton DisciplinaConsultar;
+     private javax.swing.JButton DisciplinaEliminar;
+     private javax.swing.JButton MarcaActualizar;
+     private javax.swing.JButton MarcaAgregar;
+     private javax.swing.JButton MarcaConsultar;
+     private javax.swing.JButton MarcaEliminar;
+     private javax.swing.JButton PruebaActualizar;
+     private javax.swing.JButton PruebaAgregar;
+     private javax.swing.JButton PruebaConsultar;
+     private javax.swing.JButton PruebaEliminar;
+     private javax.swing.JLabel jLabel1;
+     private javax.swing.JLabel jLabel2;
+     private javax.swing.JLabel jLabel3;
+     private javax.swing.JLabel jLabel4;
+     private javax.swing.JLabel jLabel5;
+     private javax.swing.JLabel jLabel6;
+     // End of variables declaration//GEN-END:variables
 }

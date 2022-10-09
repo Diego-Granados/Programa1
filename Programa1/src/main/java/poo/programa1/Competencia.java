@@ -15,24 +15,24 @@ import static poo.programa1.Persona.List;
  */
 public class Competencia {
     private String nombre;
-    private String id;
+    private int id;
     private LocalDate fechainicio;
     private LocalDate fechafinal;
+    public static HashMap<String, Competencia> competencias = new HashMap<>();
     private String pais;
     private String lugar;
-    private ArrayList<Disciplina> disciplinas;
-    private HashMap<Disciplina, ArrayList<Prueba>> disciplinasDict;
-    private ArrayList<Marca> marcas;
+    public HashMap<Disciplina, ArrayList<Prueba>> disciplinasDict;
+    public ArrayList<Marca> marcas;
     
-    public Competencia(String pNombre, String pId, String pPais, String pLugar, LocalDate pFechainicio, LocalDate pFechafinal){
+    public Competencia(String pNombre, int pId, String pPais, String pLugar, LocalDate pFechainicio, LocalDate pFechafinal){
         nombre = pNombre;
         id = pId;
         pais = pPais;
         lugar = pLugar;
         fechainicio = pFechainicio;
         fechafinal = pFechafinal;
-        disciplinas = new ArrayList<>();
         disciplinasDict = new HashMap<>();
+        Competencia.competencias.put(nombre, this);
     }
     
     public void setNombre(String pNombre){
@@ -41,10 +41,10 @@ public class Competencia {
     public String getNombre(){
         return nombre;
     } 
-    public void setId(String pId){
+    public void setId(int pId){
         id = pId;
     }
-    public String getId(){
+    public int getId(){
         return id;
     }
     public void setPais(String pPais){
@@ -75,7 +75,6 @@ public class Competencia {
     }
     
     public void agregarDisciplina(Disciplina pDisciplina){
-        disciplinas.add(pDisciplina);
         disciplinasDict.put(pDisciplina, new ArrayList<Prueba>());
     }
     
