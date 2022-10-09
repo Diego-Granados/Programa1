@@ -309,6 +309,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void PruebaAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PruebaAgregarActionPerformed
         // TODO add your handling code here:
+        System.out.println("Consultar Atleta Button Pressed.");
+        dispose();
+        ConsultarAtleta window = new ConsultarAtleta();
+        window.setVisible(true);
     }//GEN-LAST:event_PruebaAgregarActionPerformed
 
     private void PruebaConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PruebaConsultarActionPerformed
