@@ -15,6 +15,7 @@ public class ActualizarCompetencia extends javax.swing.JFrame {
       */
      public ActualizarCompetencia() {
           initComponents();
+          this.setLocationRelativeTo(null);
      }
 
      /**

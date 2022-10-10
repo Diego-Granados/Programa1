@@ -20,6 +20,7 @@ public class AgregarPrueba extends javax.swing.JFrame {
       */
      public AgregarPrueba() {
           initComponents();
+          this.setLocationRelativeTo(null);
           FillComboDisciplinas();
           ComboDisciplinas.setSelectedItem(null);
      }

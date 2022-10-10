@@ -21,6 +21,7 @@ public class AddPruebasComp extends javax.swing.JFrame {
       */
      public AddPruebasComp() {
           initComponents();
+          this.setLocationRelativeTo(null);
           FillComboCompetencias();
           ComboCompetencias.setSelectedItem(null);
           ComboDisciplinas.setSelectedItem(null);
@@ -218,6 +219,7 @@ public class AddPruebasComp extends javax.swing.JFrame {
           }
           if (!(competencia.pruebasDict.get(disciplina).contains(prueba))){
               competencia.pruebasDict.get(disciplina).add(prueba);
+              prueba.agregarCompetencia(competencia);
                JOptionPane.showMessageDialog(this, "Prueba agregada a la competencia con éxito.");
           } else {
                JOptionPane.showMessageDialog(this, "Esa prueba ya está en la lista.", 

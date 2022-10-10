@@ -25,6 +25,7 @@ public class AddMarcasComp extends javax.swing.JFrame {
       */
      public AddMarcasComp() {
           initComponents();
+          this.setLocationRelativeTo(null);
           FillComboCompetencias();
           FillComboAtletas();
           ComboCompetencias2.setSelectedItem(null);

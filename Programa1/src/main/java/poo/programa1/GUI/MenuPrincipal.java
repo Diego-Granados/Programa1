@@ -8,6 +8,8 @@ import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Map;
+import javax.swing.JOptionPane;
 import poo.programa1.*;
 
 /**
@@ -27,20 +29,94 @@ public class MenuPrincipal extends javax.swing.JFrame {
         if (!Atleta.List.containsKey("118790544")){
             Atleta atl = new Atleta("Daniel", "Granados", "Retana", "118790544", "CRC", pFecha, 
                     "dandiego235@gmail.com", "11111111111111111111");
+            atl = new Atleta("Manuel", "Granados", "Retana", "118790546", "CRC", pFecha, 
+                    "dandiegogranados@gmail.com", "22222222222222222222");
+            atl = new Atleta("Antonio", "Granados", "Retana", "118790547", "CRC", pFecha, 
+                    "dandiegogranados@gmail.com", "22222222222222222222");
+            atl = new Atleta("Gabriela", "Granados", "Retana", "118790548", "CRC", pFecha, 
+                    "dandiegogranados@gmail.com", "22222222222222222222");
+            atl = new Atleta("Gloria", "Granados", "Retana", "118790549", "CRC", pFecha, 
+                    "dandiegogranados@gmail.com", "22222222222222222222");
+            atl = new Atleta("Javier", "Granados", "Retana", "118790543", "CRC", pFecha, 
+                    "dandiegogranados@gmail.com", "22222222222222222222");
             atl = new Atleta("Diego", "Granados", "Retana", "118790545", "CRC", pFecha, 
                     "dandiegogranados@gmail.com", "22222222222222222222");
-            LocalDate pFechainicio = LocalDate.parse("2022-05-12",formatter);
-            LocalDate pFechafinal = LocalDate.parse("2022-07-12", formatter);
+            LocalDate pFechainicio = LocalDate.parse("2022-12-05",formatter);
+            LocalDate pFechafinal = LocalDate.parse("2022-12-07", formatter);
+            LocalDate pFechainicio2 = LocalDate.parse("2022-06-29",formatter);
+            LocalDate pFechafinal2 = LocalDate.parse("2022-06-31", formatter);
             Competencia competencia = new Competencia("Carrera Powerade", 1, "Costa Rica", "La sabana",pFechainicio,  pFechafinal);
+            Competencia competencia2 = new Competencia("Festival Deportivo", 2, "CRI Costa Rica", "Saint Anthony School",pFechainicio2,  pFechafinal2);
             Disciplina carreravelocidad = new Disciplina("Carrera de velocidad", false);
             Disciplina saltolargo = new Disciplina("Salto largo", true);
-            carreravelocidad.agregarPrueba("100 metros Mayor Hombres", "Mayor", "Hombres");
-            carreravelocidad.agregarPrueba("200 metros U20 Mujeres", "U20", "Mujeres");
-            saltolargo.agregarPrueba("Salto largo Hombres", "Master", "Hombres");
+            try{
+               saltolargo.agregarPrueba("Salto largo Hombres", "Master", "Hombres");
+          }
+          catch (Exception e){
+               JOptionPane.showMessageDialog(this, "La prueba ingresada ya está registrada", 
+                    "Error", JOptionPane.ERROR_MESSAGE);
+                     return;
+          }
+            try{
+               carreravelocidad.agregarPrueba("100 metros Mayor Hombres", "Mayor", "Hombres");
+          }
+          catch (Exception e){
+               JOptionPane.showMessageDialog(this, "La prueba ingresada ya está registrada", 
+                    "Error", JOptionPane.ERROR_MESSAGE);
+                     return;
+          }
+            try{
+               carreravelocidad.agregarPrueba("200 metros U20 Mujeres", "U20", "Mujeres");
+          }
+          catch (Exception e){
+               JOptionPane.showMessageDialog(this, "La prueba ingresada ya está registrada", 
+                    "Error", JOptionPane.ERROR_MESSAGE);
+                     return;
+          }
+           competencia.agregarDisciplina(carreravelocidad);
+           competencia.agregarDisciplina(saltolargo);
+      
+           for (Prueba prueba : carreravelocidad.pruebas){
+               competencia.pruebasDict.get(carreravelocidad).add(prueba);
+               prueba.agregarCompetencia(competencia);
+               double resultado = 0;
+               String tiempo = "00:01:10.0";
+               int j = 9;
+               for(Map.Entry entry : Atleta.List.entrySet()){
+                    Object atleta = entry.getValue();
+                    if (atleta instanceof Atleta){
+                         String tiempo2 = tiempo + Integer.toString(j);
+                         System.out.println(tiempo2);
+                         resultado = Marca.convertToTime(tiempo2);
+                         competencia.agregarMarca((Atleta) atleta, resultado, prueba);
+                         j--;
+                    }
+               }
+          }
+           for (Prueba prueba : saltolargo.pruebas){
+               competencia.pruebasDict.get(saltolargo).add(prueba);
+               prueba.agregarCompetencia(competencia);
+               double resultado = 1;
+               for(Map.Entry entry : Atleta.List.entrySet()){
+                    Object atleta = entry.getValue();
+                    if (atleta instanceof Atleta){
+                         competencia.agregarMarca((Atleta) atleta, resultado, prueba);
+                         resultado++;
+                    }
+               }
+               
+             
+          }
+           
+           
+           
+            
+            
+            
           
             Visor vis = new Visor("Bebo", "Babich", "Bebé", "Bobo", "Bebe", pFecha, "babas", "babebibobubabebibobu");   
-            System.out.println(Marca.convertToTime("04:05:15.20"));
-            System.out.println(Marca.convertToString(14715.2));
+            System.out.println(Marca.convertToTime("00:01:10.07"));
+            System.out.println(Marca.convertToString(70.07));
         }
     }
 
@@ -346,6 +422,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void CompetenciaConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompetenciaConsultarActionPerformed
         // TODO add your handling code here:
+        dispose();
+        ConsultarCompetencia window = new ConsultarCompetencia();
+        window.setVisible(true);
     }//GEN-LAST:event_CompetenciaConsultarActionPerformed
 
     private void AtletaAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtletaAgregarActionPerformed
@@ -369,6 +448,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void MarcaConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MarcaConsultarActionPerformed
         // TODO add your handling code here:
+        dispose();
+        ConsultarMarca window = new ConsultarMarca();
+        window.setVisible(true);
     }//GEN-LAST:event_MarcaConsultarActionPerformed
 
     private void AtletaActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtletaActualizarActionPerformed

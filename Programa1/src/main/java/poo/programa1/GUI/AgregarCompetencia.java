@@ -26,6 +26,7 @@ public class AgregarCompetencia extends javax.swing.JFrame {
       */
      public AgregarCompetencia() {
           initComponents();
+          this.setLocationRelativeTo(null);
      }
 
      /**

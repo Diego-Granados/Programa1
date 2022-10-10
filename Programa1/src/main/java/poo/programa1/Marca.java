@@ -4,6 +4,7 @@
  */
 package poo.programa1;
 
+import java.text.DecimalFormat;
 /**
  *
  * @author Dandiego
@@ -13,12 +14,18 @@ public class Marca {
     private Atleta atleta;
     private Prueba prueba;
     private Competencia competencia;
+    private int lugar;
+    private int dorsal;
+    
+    private static final DecimalFormat df = new DecimalFormat("0.00");
     
     public Marca(Atleta pAtleta, double pResultado, Prueba pPrueba, Competencia pCompetencia){
         atleta = pAtleta;
         resultado = pResultado;
         prueba = pPrueba;
         competencia = pCompetencia;
+        dorsal = pPrueba.getContador(competencia);
+        lugar = 0;
         pPrueba.agregarMarca(this);
         pAtleta.agregarMarca(this);
     }
@@ -54,6 +61,24 @@ public class Marca {
         this.competencia = competencia;
     }
     
+    public int getLugar(){
+         return lugar;
+    }
+    
+    public void setLugar(int pLugar){
+         lugar = pLugar;
+    }
+    
+    public void setDorsal(int pDorsal){
+         dorsal = pDorsal;
+    }
+
+     public int getDorsal() {
+          return dorsal;
+     }
+    
+    
+    
     public static double convertToTime(String tiempo){
          String[] partes = tiempo.split(":");
          double hours = Double.parseDouble(partes[0]);
@@ -70,8 +95,8 @@ public class Marca {
     
     public static String convertToString(double tiempo){
          tiempo *= 100;
+         tiempo = Double.parseDouble(df.format(tiempo));
          int tiempo2 = (int) tiempo;
-         
          int second100th = tiempo2 % 100;
          
          tiempo2 /= 100;

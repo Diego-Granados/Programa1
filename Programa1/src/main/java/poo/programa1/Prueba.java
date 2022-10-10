@@ -5,6 +5,7 @@
 package poo.programa1;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
@@ -16,6 +17,7 @@ public class Prueba{
     private String genero;
     private Disciplina disciplina;
     private ArrayList<Marca> marcas;
+    public HashMap<Competencia, Integer> contador;
     
     public Prueba(String pNombre, String pCategoria, String pGenero, Disciplina pDisciplina){
         nombre = pNombre;
@@ -23,6 +25,7 @@ public class Prueba{
         genero = pGenero;
         disciplina = pDisciplina;
         marcas = new ArrayList<Marca>();
+        contador= new HashMap<>();
     }
     
     public String getNombre(){
@@ -30,6 +33,9 @@ public class Prueba{
     }
     public void setNombre(String pNombre){
         nombre = pNombre;
+    }
+    public ArrayList<Marca> getMarcas(){
+         return marcas;
     }
     
     public String getCategoria(){
@@ -72,5 +78,54 @@ public class Prueba{
     
     public void agregarMarca(Marca pMarca){
         marcas.add(pMarca);
+    }
+    
+    public void agregarCompetencia(Competencia competencia){
+         contador.put(competencia, 1);
+    }
+    public void incrementarContador(Competencia competencia){
+        contador.put(competencia, contador.get(competencia) + 1);
+    }
+    
+    public int getContador(Competencia competencia){
+        return  contador.get(competencia);
+    }
+    
+    public void ordenarMarcasDistancia(Competencia pCompetencia){
+         for (int i  = 1; i < marcas.size(); ++i){
+              Marca key = marcas.get(i);
+              int j = i - 1;
+              while (j >= 0 && marcas.get(j).getResultado() < key.getResultado()){
+                    marcas.set(j+1, marcas.get(j));
+                   j = j - 1;
+              }
+              marcas.set(j+1, key);
+         }
+         int i = 1;
+         for (Marca marcaIter : marcas){
+              if (marcaIter.getCompetencia() == pCompetencia){
+                   marcaIter.setLugar(i);
+                   i++;
+              }           
+         }
+    }
+    
+    public void ordenarMarcasTiempo(Competencia pCompetencia){
+         for (int i  = 1; i < marcas.size(); ++i){
+              Marca key = marcas.get(i);
+              int j = i - 1;
+              while (j >= 0 && marcas.get(j).getResultado() > key.getResultado()){
+                    marcas.set(j+1, marcas.get(j));
+                   j = j - 1;
+              }
+              marcas.set(j+1, key);
+         }
+         int i = 1;
+         for (Marca marcaIter : marcas){
+              if (marcaIter.getCompetencia() == pCompetencia){
+                   marcaIter.setLugar(i);
+                   i++;
+              }           
+         }
     }
 }

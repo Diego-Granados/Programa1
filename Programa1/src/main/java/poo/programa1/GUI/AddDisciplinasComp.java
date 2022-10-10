@@ -20,6 +20,7 @@ public class AddDisciplinasComp extends javax.swing.JFrame {
       */
      public AddDisciplinasComp() {
           initComponents();
+          this.setLocationRelativeTo(null);
           FillComboDisciplinas();
           ComboDisciplinas.setSelectedItem(null);
           FillComboCompetencias();

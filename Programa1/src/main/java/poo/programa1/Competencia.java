@@ -88,11 +88,9 @@ public class Competencia {
     
     public void agregarMarca(Atleta pAtleta, double pResultado, Prueba pPrueba){
         Marca newMarca = new Marca(pAtleta, pResultado, pPrueba, this);
+        pPrueba.incrementarContador(this);
         this.marcas.add(newMarca);
     }
-    public void agregarMarca(Marca newMarca){
-        this.marcas.add(newMarca);
-    }
-    
+   
     
 }
