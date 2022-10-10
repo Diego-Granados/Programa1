@@ -45,6 +45,13 @@ public class Prueba{
         genero = pGenero;
     }
     
+    public Disciplina getDisciplina(){
+        return disciplina;
+    }
+    public void setDisciplina(Disciplina pDisciplina){
+        disciplina = pDisciplina;
+    }
+    
     public boolean equals(Prueba pPrueba){
         if (this.nombre.equals(pPrueba.getNombre()) && 
                 this.categoria.equals(pPrueba.getCategoria()) && 

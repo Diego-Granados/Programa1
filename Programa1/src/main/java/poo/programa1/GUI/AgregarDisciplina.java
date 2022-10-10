@@ -176,7 +176,7 @@ public class AgregarDisciplina extends javax.swing.JFrame {
             return;
         }
         Disciplina disciplina = new Disciplina(pNombre, pTipo);
-        Disciplina.disciplinas.put(pNombre, disciplina);
+        
         JOptionPane.showMessageDialog(this, "Disciplina creada con éxito.");
     }//GEN-LAST:event_aceptarButtonActionPerformed
 

@@ -29,8 +29,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
                     "dandiego235@gmail.com", "11111111111111111111");
             atl = new Atleta("Diego", "Granados", "Retana", "118790545", "CRC", pFecha, 
                     "dandiegogranados@gmail.com", "22222222222222222222");
-
+            LocalDate pFechainicio = LocalDate.parse("2022-05-12",formatter);
+            LocalDate pFechafinal = LocalDate.parse("2022-07-12", formatter);
+            Competencia competencia = new Competencia("Carrera Powerade", 1, "Costa Rica", "La sabana",pFechainicio,  pFechafinal);
+            Disciplina carreravelocidad = new Disciplina("Carrera de velocidad", false);
+            Disciplina saltolargo = new Disciplina("Salto largo", true);
+            carreravelocidad.agregarPrueba("100 metros Mayor Hombres", "Mayor", "Hombres");
+            carreravelocidad.agregarPrueba("200 metros U20 Mujeres", "U20", "Mujeres");
+            saltolargo.agregarPrueba("Salto largo Hombres", "Master", "Hombres");
+          
             Visor vis = new Visor("Bebo", "Babich", "Bebé", "Bobo", "Bebe", pFecha, "babas", "babebibobubabebibobu");   
+            System.out.println(Marca.convertToTime("04:05:15.20"));
+            System.out.println(Marca.convertToString(14715.2));
         }
     }
 
@@ -309,6 +319,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void PruebaAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PruebaAgregarActionPerformed
         // TODO add your handling code here:
+        dispose();
+        AgregarPrueba window = new AgregarPrueba();
+        window.setVisible(true);
     }//GEN-LAST:event_PruebaAgregarActionPerformed
 
     private void PruebaConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PruebaConsultarActionPerformed

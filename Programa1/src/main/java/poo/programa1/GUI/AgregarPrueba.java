@@ -4,6 +4,7 @@
  */
 package poo.programa1.GUI;
 import java.util.Map;
+import javax.swing.JOptionPane;
 import poo.programa1.*;
 /**
  *
@@ -182,7 +183,14 @@ public class AgregarPrueba extends javax.swing.JFrame {
           pNombre = NombreTXT.getText();
           pCategoria = CategoriaTXT.getText();
           pGenero = GeneroTXT.getText();
-          disciplina.agregarPrueba(pNombre, pCategoria, pGenero);
+          try{
+               disciplina.agregarPrueba(pNombre, pCategoria, pGenero);
+          }
+          catch (Exception e){
+               JOptionPane.showMessageDialog(this, "La prueba ingresada ya está registrada", 
+                    "Error", JOptionPane.ERROR_MESSAGE);
+                     return;
+          }
      }//GEN-LAST:event_AceptarButtonActionPerformed
 
      private void GeneroTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneroTXTActionPerformed

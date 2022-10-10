@@ -20,6 +20,7 @@ public class Marca {
         prueba = pPrueba;
         competencia = pCompetencia;
         pPrueba.agregarMarca(this);
+        pAtleta.agregarMarca(this);
     }
     public void setResultado(double pResultado){
         resultado = pResultado;
@@ -51,6 +52,62 @@ public class Marca {
 
     public void setCompetencia(Competencia competencia) {
         this.competencia = competencia;
+    }
+    
+    public static double convertToTime(String tiempo){
+         String[] partes = tiempo.split(":");
+         double hours = Double.parseDouble(partes[0]);
+         double minutes = Double.parseDouble(partes[1]);
+        
+         partes = partes[2].split("\\.");
+         double seconds = Double.parseDouble(partes[0]);
+         double second100th = Double.parseDouble(partes[1]);
+         hours *= 3600;
+         minutes *= 60;
+         second100th /= 100;
+         return hours + minutes + seconds + second100th;
+    }
+    
+    public static String convertToString(double tiempo){
+         tiempo *= 100;
+         int tiempo2 = (int) tiempo;
+         
+         int second100th = tiempo2 % 100;
+         
+         tiempo2 /= 100;
+         int hours = tiempo2 / 3600;
+         tiempo2 %= 3600;
+         int minutes = tiempo2 / 60;
+         int seconds = tiempo2 %= 60;
+         String time = new String();
+         if (hours < 10){
+              time += "0";
+         }
+         time +=Integer.toString(hours) +":";
+         if (minutes < 10){
+              time += "0";
+         }
+         time +=Integer.toString(minutes) +":";
+         if (seconds < 10){
+              time += "0";
+         }
+         time +=Integer.toString(seconds) +".";
+         if (second100th < 10){
+              time += "0";
+         }
+         time +=Integer.toString(second100th);
+         
+         
+         return time;         
+    }
+    
+    public boolean equals(Atleta pAtleta, double pResultado, Prueba pPrueba, Competencia pCompetencia){
+        if (this.atleta.getId().equals(pAtleta.getId()) && 
+                resultado == pResultado && 
+                this.prueba.getNombre().equals(pPrueba.getNombre()) && this.competencia.getNombre() == pCompetencia.getNombre()){
+            return true;
+        }
+        return false;
     }
 
 }

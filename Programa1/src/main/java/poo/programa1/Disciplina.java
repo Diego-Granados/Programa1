@@ -4,8 +4,10 @@
  */
 package poo.programa1;
 
+import poo.programa1.GUI.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,7 +16,7 @@ import java.util.HashMap;
 public class Disciplina {
     private String nombre;
     private boolean tipo;
-    private ArrayList<Prueba> pruebas;
+    public ArrayList<Prueba> pruebas;
     
     public static HashMap<String, Disciplina> disciplinas = new HashMap<>();
     
@@ -22,15 +24,15 @@ public class Disciplina {
         nombre = pNombre;
         tipo = pTipo;
         pruebas = new ArrayList<Prueba>();
+        Disciplina.disciplinas.put(pNombre,  this);
     }
     
-    public void agregarPrueba(String pNombre, String pCategoria, String pGenero){
+    public void agregarPrueba(String pNombre, String pCategoria, String pGenero) throws Exception{
         Prueba prueba = new Prueba(pNombre, pCategoria, pGenero, this);
         for (Prueba elemento : pruebas){
             if (elemento.equals(prueba)){
-                System.out.println("ERROR: La prueba ingresada ya está registrada. No se agregó a la lista.");
-                prueba = null; // borramos la prueba
-                return;
+                 Exception e = new Exception("La prueba ingresada ya está registrada");
+                 throw e;
             }
         }
         pruebas.add(prueba);
@@ -43,6 +45,14 @@ public class Disciplina {
             }
         }
         return null;
+    }
+    
+    public String getNombre(){
+         return nombre;
+    }
+    
+    public boolean getTipo(){
+         return tipo;
     }
     
 }

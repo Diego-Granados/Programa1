@@ -21,7 +21,8 @@ public class Competencia {
     public static HashMap<String, Competencia> competencias = new HashMap<>();
     private String pais;
     private String lugar;
-    public HashMap<Disciplina, ArrayList<Prueba>> disciplinasDict;
+    public HashMap<String, Disciplina> disciplinasDict;
+    public HashMap<Disciplina, ArrayList<Prueba>> pruebasDict;
     public ArrayList<Marca> marcas;
     
     public Competencia(String pNombre, int pId, String pPais, String pLugar, LocalDate pFechainicio, LocalDate pFechafinal){
@@ -31,7 +32,9 @@ public class Competencia {
         lugar = pLugar;
         fechainicio = pFechainicio;
         fechafinal = pFechafinal;
+        marcas = new ArrayList<>();
         disciplinasDict = new HashMap<>();
+        pruebasDict = new HashMap<>();
         Competencia.competencias.put(nombre, this);
     }
     
@@ -75,18 +78,20 @@ public class Competencia {
     }
     
     public void agregarDisciplina(Disciplina pDisciplina){
-        disciplinasDict.put(pDisciplina, new ArrayList<Prueba>());
+         disciplinasDict.put(pDisciplina.getNombre(), pDisciplina);
+        pruebasDict.put(pDisciplina, new ArrayList<Prueba>());
     }
     
     public void agregarPrueba(Disciplina pDisciplina, Prueba pPrueba){
-        disciplinasDict.get(pDisciplina).add(pPrueba);
+        pruebasDict.get(pDisciplina).add(pPrueba);
     }
     
     public void agregarMarca(Atleta pAtleta, double pResultado, Prueba pPrueba){
         Marca newMarca = new Marca(pAtleta, pResultado, pPrueba, this);
         this.marcas.add(newMarca);
-        pPrueba.agregarMarca(newMarca);
-        pAtleta.agregarMarca(newMarca);
+    }
+    public void agregarMarca(Marca newMarca){
+        this.marcas.add(newMarca);
     }
     
     

@@ -136,10 +136,13 @@ public class AddDisciplinasComp extends javax.swing.JFrame {
 
      private void AceptarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarButtonActionPerformed
           // TODO add your handling code here:
+          if (ComboCompetencias.getSelectedItem() == null || ComboDisciplinas.getSelectedItem() == null){
+               return;
+          }
           disciplina = Disciplina.disciplinas.get((String) ComboDisciplinas.getSelectedItem());
           competencia = Competencia.competencias.get((String) ComboCompetencias.getSelectedItem());
-          if (!(competencia.disciplinasDict.containsKey(disciplina))){
-               competencia.disciplinasDict.put(disciplina, new ArrayList<Prueba>());
+          if (!(competencia.pruebasDict.containsKey(disciplina))){
+               competencia.agregarDisciplina(disciplina);
                JOptionPane.showMessageDialog(this, "Disciplina agregada a la competencia con éxito.");
           } else {
                JOptionPane.showMessageDialog(this, "Esa disciplina ya está en la lista.", 

@@ -6,7 +6,6 @@ package poo.programa1.GUI;
 
 import java.util.Map;
 import poo.programa1.*;
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
 /**
  *
@@ -16,35 +15,50 @@ public class AddPruebasComp extends javax.swing.JFrame {
      private Disciplina disciplina;
      private Competencia competencia;
      private Prueba prueba;
+     
      /**
       * Creates new form AddDisciplinasComp
       */
      public AddPruebasComp() {
           initComponents();
-          FillComboDisciplinas();
-          ComboDisciplinas.setSelectedItem(null);
           FillComboCompetencias();
           ComboCompetencias.setSelectedItem(null);
+          ComboDisciplinas.setSelectedItem(null);
+          ComboPruebas.setSelectedItem(null);
      }
      
      private void FillComboDisciplinas(){
-          for(Map.Entry entry : competencia.disciplinasDict.entrySet()){
-               Object Items = entry.getKey();
-               ComboDisciplinas.addItem((String) Items);
+          if (competencia == null){
+               return;
+          }
+          ComboDisciplinas.removeAllItems();
+          if (!competencia.disciplinasDict.isEmpty()){
+               for(Map.Entry entry : competencia.disciplinasDict.entrySet()){
+                    Object Items = entry.getKey();
+                    ComboDisciplinas.addItem((String) Items);
+               }
           }
      }
      
      private void FillComboCompetencias(){
-          for(Map.Entry entry : Competencia.competencias.entrySet()){
-               Object Items = entry.getKey();
-               ComboCompetencias.addItem((String) Items);
+          if (!Competencia.competencias.isEmpty() ){
+               for(Map.Entry entry : Competencia.competencias.entrySet()){
+                    Object Items = entry.getKey();
+                    ComboCompetencias.addItem((String) Items);
+               }
           }
      }
      
      private void FillComboPruebas(){
-          for(Map.Entry entry : competencia.disciplinasDict.entrySet()){
-               Object Items = entry.getKey();
-               ComboCompetencias.addItem((String) Items);
+          if (disciplina == null){
+               return;
+          }
+          ComboPruebas.removeAllItems();
+          if (!disciplina.pruebas.isEmpty()){
+               for(Prueba prueba : disciplina.pruebas){
+                    Object Items = prueba.getNombre();
+                    ComboPruebas.addItem((String) Items);
+               }
           }
      }
      
@@ -83,9 +97,31 @@ public class AddPruebasComp extends javax.swing.JFrame {
                }
           });
 
+          ComboDisciplinas.addActionListener(new java.awt.event.ActionListener() {
+               public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    ComboDisciplinasActionPerformed(evt);
+               }
+          });
+
+          ComboPruebas.addActionListener(new java.awt.event.ActionListener() {
+               public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    ComboPruebasActionPerformed(evt);
+               }
+          });
+
           AceptarButton.setText("Aceptar");
+          AceptarButton.addActionListener(new java.awt.event.ActionListener() {
+               public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    AceptarButtonActionPerformed(evt);
+               }
+          });
 
           CancelarButton.setText("Cancelar");
+          CancelarButton.addActionListener(new java.awt.event.ActionListener() {
+               public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    CancelarButtonActionPerformed(evt);
+               }
+          });
 
           javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
           getContentPane().setLayout(layout);
@@ -144,7 +180,58 @@ public class AddPruebasComp extends javax.swing.JFrame {
 
      private void ComboCompetenciasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboCompetenciasActionPerformed
           // TODO add your handling code here:
+          competencia = Competencia.competencias.get((String)ComboCompetencias.getSelectedItem());
+          if (competencia == null){
+               return;
+          }
+          FillComboDisciplinas();
      }//GEN-LAST:event_ComboCompetenciasActionPerformed
+
+     private void ComboDisciplinasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboDisciplinasActionPerformed
+          // TODO add your handling code here:
+          if (competencia == null){
+               return;
+          }
+          if (competencia.disciplinasDict.containsKey((String) ComboDisciplinas.getSelectedItem())){
+               disciplina = competencia.disciplinasDict.get((String) ComboDisciplinas.getSelectedItem());
+               FillComboPruebas();
+          }
+          
+     }//GEN-LAST:event_ComboDisciplinasActionPerformed
+
+     private void ComboPruebasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboPruebasActionPerformed
+          // TODO add your handling code here:
+          
+     }//GEN-LAST:event_ComboPruebasActionPerformed
+
+     private void AceptarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarButtonActionPerformed
+          // TODO add your handling code here:
+          if (ComboCompetencias.getSelectedItem() == null || ComboDisciplinas.getSelectedItem() == null ||
+                  ComboPruebas.getSelectedItem() == null){
+               return;
+          }
+          for (Prueba pruebaIter : disciplina.pruebas){
+               if (pruebaIter.getNombre() == ComboPruebas.getSelectedItem()){
+                    prueba = pruebaIter;
+                    break;
+               }
+          }
+          if (!(competencia.pruebasDict.get(disciplina).contains(prueba))){
+              competencia.pruebasDict.get(disciplina).add(prueba);
+               JOptionPane.showMessageDialog(this, "Prueba agregada a la competencia con éxito.");
+          } else {
+               JOptionPane.showMessageDialog(this, "Esa prueba ya está en la lista.", 
+                    "Error", JOptionPane.ERROR_MESSAGE);
+               return;
+          }
+     }//GEN-LAST:event_AceptarButtonActionPerformed
+
+     private void CancelarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarButtonActionPerformed
+          // TODO add your handling code here:
+          dispose();
+          MenuPrincipal menu = new MenuPrincipal();
+          menu.setVisible(true);
+     }//GEN-LAST:event_CancelarButtonActionPerformed
 
      /**
       * @param args the command line arguments
