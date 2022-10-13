@@ -21,4 +21,10 @@ public class Atleta extends Persona {
     public void agregarMarca(Marca pMarca){
         marcas.add(pMarca);
     }
+
+     public ArrayList<Marca> getMarcas() {
+          return marcas;
+     }
+    
+    
 }

@@ -101,6 +101,10 @@ public class Prueba{
               }
               marcas.set(j+1, key);
          }
+         darLugares(pCompetencia);
+    }
+    
+    public void darLugares(Competencia pCompetencia){
          int i = 1;
          for (Marca marcaIter : marcas){
               if (marcaIter.getCompetencia() == pCompetencia){
@@ -109,7 +113,6 @@ public class Prueba{
               }           
          }
     }
-    
     public void ordenarMarcasTiempo(Competencia pCompetencia){
          for (int i  = 1; i < marcas.size(); ++i){
               Marca key = marcas.get(i);

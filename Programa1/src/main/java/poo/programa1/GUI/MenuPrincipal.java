@@ -31,7 +31,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                     "dandiego235@gmail.com", "11111111111111111111");
             atl = new Atleta("Manuel", "Granados", "Retana", "118790546", "CRC", pFecha, 
                     "dandiegogranados@gmail.com", "22222222222222222222");
-            atl = new Atleta("Antonio", "Granados", "Retana", "118790547", "CRC", pFecha, 
+            atl = new Atleta("Andrew", "Granados", "Retana", "118790547", "CRC", pFecha, 
                     "dandiegogranados@gmail.com", "22222222222222222222");
             atl = new Atleta("Gabriela", "Granados", "Retana", "118790548", "CRC", pFecha, 
                     "dandiegogranados@gmail.com", "22222222222222222222");
@@ -75,7 +75,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
           }
            competencia.agregarDisciplina(carreravelocidad);
            competencia.agregarDisciplina(saltolargo);
-      
+           competencia2.agregarDisciplina(saltolargo);
            for (Prueba prueba : carreravelocidad.pruebas){
                competencia.pruebasDict.get(carreravelocidad).add(prueba);
                prueba.agregarCompetencia(competencia);
@@ -104,10 +104,19 @@ public class MenuPrincipal extends javax.swing.JFrame {
                          resultado++;
                     }
                }
-               
-             
           }
-           
+           for (Prueba prueba : saltolargo.pruebas){
+               competencia2.pruebasDict.get(saltolargo).add(prueba);
+               prueba.agregarCompetencia(competencia2);
+               double resultado = 15;
+               for(Map.Entry entry : Atleta.List.entrySet()){
+                    Object atleta = entry.getValue();
+                    if (atleta instanceof Atleta){
+                         competencia2.agregarMarca((Atleta) atleta, resultado, prueba);
+                         resultado--;
+                    }
+               }
+           }       
            
            
             

@@ -32,6 +32,7 @@ public class ConsultarMarca extends javax.swing.JFrame {
           MarcasCompetenciaB = new javax.swing.JButton();
           MarcasAtletaB = new javax.swing.JButton();
           jButton2 = new javax.swing.JButton();
+          jButton3 = new javax.swing.JButton();
 
           jButton1.setText("jButton1");
 
@@ -55,6 +56,18 @@ public class ConsultarMarca extends javax.swing.JFrame {
           });
 
           jButton2.setText("Prueba");
+          jButton2.addActionListener(new java.awt.event.ActionListener() {
+               public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jButton2ActionPerformed(evt);
+               }
+          });
+
+          jButton3.setText("Mejores");
+          jButton3.addActionListener(new java.awt.event.ActionListener() {
+               public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jButton3ActionPerformed(evt);
+               }
+          });
 
           javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
           getContentPane().setLayout(layout);
@@ -69,7 +82,9 @@ public class ConsultarMarca extends javax.swing.JFrame {
                     .addComponent(MarcasCompetenciaB)
                     .addGap(18, 18, 18)
                     .addComponent(MarcasAtletaB, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
+                    .addGap(18, 18, 18)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
+                    .addGap(18, 18, 18)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap())
           );
@@ -80,9 +95,9 @@ public class ConsultarMarca extends javax.swing.JFrame {
                     .addGap(88, 88, 88)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                          .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
-                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                              .addComponent(MarcasCompetenciaB, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
-                              .addComponent(MarcasAtletaB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                         .addComponent(MarcasCompetenciaB, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+                         .addComponent(MarcasAtletaB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                         .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addContainerGap(146, Short.MAX_VALUE))
           );
 
@@ -99,7 +114,24 @@ public class ConsultarMarca extends javax.swing.JFrame {
 
      private void MarcasAtletaBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MarcasAtletaBActionPerformed
           // TODO add your handling code here:
+          dispose();
+          MarcasAtleta window = new MarcasAtleta();
+          window.setVisible(true);
      }//GEN-LAST:event_MarcasAtletaBActionPerformed
+
+     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+          // TODO add your handling code here:
+          dispose();
+          MejoresMarcas window = new MejoresMarcas();
+          window.setVisible(true);
+     }//GEN-LAST:event_jButton3ActionPerformed
+
+     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+          // TODO add your handling code here:
+          dispose();
+          MarcasPruebas window = new MarcasPruebas();
+          window.setVisible(true);
+     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -142,5 +174,6 @@ public class ConsultarMarca extends javax.swing.JFrame {
      private javax.swing.JLabel TitleCM;
      private javax.swing.JButton jButton1;
      private javax.swing.JButton jButton2;
+     private javax.swing.JButton jButton3;
      // End of variables declaration//GEN-END:variables
 }
