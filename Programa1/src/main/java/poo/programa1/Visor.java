@@ -24,7 +24,7 @@ public class Visor extends Persona {
     public void agregarAtleta(Atleta pAtleta){
         atletas.add(pAtleta);
         System.out.println("Atleta" + pAtleta.getNombre() + " " +pAtleta.getApellido1() + " " + 
-                pAtleta.getApellido2() + " agregado con éxito");
+                pAtleta.getApellido2() + "  agregado con éxito");
     }
     
     public void borrarAtleta(String pId){
@@ -37,4 +37,9 @@ public class Visor extends Persona {
         }
         System.out.println("ERROR: Identificación ingresada no es válida.");  
     }
+
+     public ArrayList<Atleta> getAtletas() {
+          return atletas;
+     }
+    
 }

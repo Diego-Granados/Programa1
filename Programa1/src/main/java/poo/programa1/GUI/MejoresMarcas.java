@@ -17,7 +17,6 @@ import org.apache.commons.lang3.StringUtils;
  */
 public class MejoresMarcas extends javax.swing.JFrame {
      private Atleta atleta;
-     private Prueba prueba;
      private DefaultListModel PruebaListModel;
      private DefaultListModel CompetenciaListModel;
      private DefaultListModel MarcaListModel;
@@ -60,17 +59,6 @@ public class MejoresMarcas extends javax.swing.JFrame {
           for (Marca marca : marcas){
                PruebaListModel.addElement(marca.getPrueba().getNombre());
           }
-          /*
-          if (!atleta.getMarcas().isEmpty()){
-               for(Marca marca : atleta.getMarcas()){
-                    if (!pruebasName.contains(marca.getPrueba().getNombre())){              
-                         PruebaListModel.addElement(marca.getPrueba().getNombre());
-                         pruebasName.add(marca.getPrueba().getNombre());
-                         pruebas.add(marca.getPrueba());
-                    }
-               }
-          }
-          */
      }
      
      private void EscogerMarcas(){
@@ -109,20 +97,6 @@ public class MejoresMarcas extends javax.swing.JFrame {
           for (Marca marca : marcas){
                CompetenciaListModel.addElement(marca.getCompetencia().getNombre());
           }
-          /*
-          if (!prueba.getMarcas().isEmpty()){
-               for(Marca marca : prueba.getMarcas()){
-                    if (marca.getAtleta() != atleta){
-                         continue;
-                    }
-                    String CompName = marca.getCompetencia().getNombre();                    
-                    CompetenciaListModel.addElement(CompName);
-                    if (!competencias.contains(marca.getCompetencia())){
-                         competencias.add(marca.getCompetencia());
-                    }
-               }
-          }
-          */
      }
      
      private void FillMarcaList(){
@@ -142,32 +116,6 @@ public class MejoresMarcas extends javax.swing.JFrame {
                }                    
                MarcaListModel.addElement(resultado);
           }
-          /*
-          if (!prueba.getMarcas().isEmpty()){
-               marcas = new ArrayList<>();
-               for (Competencia competencia : competencias){
-                    for(Marca marca : competencia.marcas){
-                         if (marca.getPrueba() != prueba || marca.getAtleta() != atleta){
-                              continue;
-                         }
-                         String resultado = new String();
-                         if (!prueba.getDisciplina().getTipo()){ // si se mide con tiempo
-                              prueba.ordenarMarcasTiempo(competencia);
-                              resultado = Marca.convertToString(marca.getResultado());
-                         } else {
-                              prueba.ordenarMarcasDistancia(competencia);
-                              resultado = Double.toString(marca.getResultado());
-                         }                    
-                         MarcaListModel.addElement(resultado);
-                         if (!marcas.contains(marca)){
-                              marcas.add(marca);
-                         }
-                         
-                         break;
-                    }
-               }
-          }
-          */
      }
      
      private void FillLugarList(){
@@ -181,15 +129,6 @@ public class MejoresMarcas extends javax.swing.JFrame {
                marca.getPrueba().darLugares(marca.getCompetencia());
                LugarListModel.addElement(marca.getLugar());
           }
-          /*
-          if (!prueba.getMarcas().isEmpty()){
-               for (Marca marca : marcas){
-                    if (marca.getPrueba() == prueba){
-                         LugarListModel.addElement(marca.getLugar());
-                    }
-               }    
-          }
-          */
      }
      
      

@@ -33,6 +33,7 @@ public class ConsultarMarca extends javax.swing.JFrame {
           MarcasAtletaB = new javax.swing.JButton();
           jButton2 = new javax.swing.JButton();
           jButton3 = new javax.swing.JButton();
+          jButton4 = new javax.swing.JButton();
 
           jButton1.setText("jButton1");
 
@@ -69,6 +70,13 @@ public class ConsultarMarca extends javax.swing.JFrame {
                }
           });
 
+          jButton4.setText("Cerrar");
+          jButton4.addActionListener(new java.awt.event.ActionListener() {
+               public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jButton4ActionPerformed(evt);
+               }
+          });
+
           javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
           getContentPane().setLayout(layout);
           layout.setHorizontalGroup(
@@ -87,6 +95,10 @@ public class ConsultarMarca extends javax.swing.JFrame {
                     .addGap(18, 18, 18)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap())
+               .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton4)
+                    .addGap(191, 191, 191))
           );
           layout.setVerticalGroup(
                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,7 +110,9 @@ public class ConsultarMarca extends javax.swing.JFrame {
                          .addComponent(MarcasCompetenciaB, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
                          .addComponent(MarcasAtletaB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                          .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addContainerGap(146, Short.MAX_VALUE))
+                    .addGap(51, 51, 51)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(55, Short.MAX_VALUE))
           );
 
           pack();
@@ -132,6 +146,13 @@ public class ConsultarMarca extends javax.swing.JFrame {
           MarcasPruebas window = new MarcasPruebas();
           window.setVisible(true);
      }//GEN-LAST:event_jButton2ActionPerformed
+
+     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+          // TODO add your handling code here:
+          dispose();
+          MenuPrincipal menu = new MenuPrincipal();
+          menu.setVisible(true);
+     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,5 +196,6 @@ public class ConsultarMarca extends javax.swing.JFrame {
      private javax.swing.JButton jButton1;
      private javax.swing.JButton jButton2;
      private javax.swing.JButton jButton3;
+     private javax.swing.JButton jButton4;
      // End of variables declaration//GEN-END:variables
 }

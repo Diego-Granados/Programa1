@@ -172,8 +172,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
           MarcaActualizar = new javax.swing.JButton();
           MarcaEliminar = new javax.swing.JButton();
           jLabel7 = new javax.swing.JLabel();
-          jButton1 = new javax.swing.JButton();
-          VisorConsultar = new javax.swing.JButton();
+          AgregarVisor = new javax.swing.JButton();
           VisorActualizar = new javax.swing.JButton();
           VisorEliminar = new javax.swing.JButton();
           ConfigButton = new javax.swing.JButton();
@@ -207,6 +206,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
           });
 
           PruebaActualizar.setText("Actualizar");
+          PruebaActualizar.addActionListener(new java.awt.event.ActionListener() {
+               public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    PruebaActualizarActionPerformed(evt);
+               }
+          });
 
           PruebaEliminar.setText("Eliminar");
 
@@ -225,6 +229,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
           });
 
           DisciplinaActualizar.setText("Actualizar");
+          DisciplinaActualizar.addActionListener(new java.awt.event.ActionListener() {
+               public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    DisciplinaActualizarActionPerformed(evt);
+               }
+          });
 
           DisciplinaEliminar.setText("Eliminar");
 
@@ -294,16 +303,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
           jLabel7.setText("Visores");
 
-          jButton1.setText("Agregar");
-          jButton1.addActionListener(new java.awt.event.ActionListener() {
+          AgregarVisor.setText("Agregar");
+          AgregarVisor.addActionListener(new java.awt.event.ActionListener() {
                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jButton1ActionPerformed(evt);
+                    AgregarVisorActionPerformed(evt);
                }
           });
 
-          VisorConsultar.setText("Consultar");
-
-          VisorActualizar.setText("Actualizar");
+          VisorActualizar.setText("Actualizar listas de pruebas");
 
           VisorEliminar.setText("Eliminar");
 
@@ -340,11 +347,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
                                                                  .addComponent(AtletaAgregar)
                                                                  .addComponent(PruebaAgregar)
                                                                  .addComponent(CompetenciaAgregar)
-                                                                 .addComponent(jButton1)
+                                                                 .addComponent(AgregarVisor)
                                                                  .addComponent(MarcaAgregar))
                                                             .addGap(18, 18, Short.MAX_VALUE)
                                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                 .addComponent(VisorConsultar)
                                                                  .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                                       .addComponent(PruebaConsultar, javax.swing.GroupLayout.Alignment.TRAILING)
                                                                       .addComponent(CompetenciaConsultar, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -356,16 +362,22 @@ public class MenuPrincipal extends javax.swing.JFrame {
                                                             .addComponent(DisciplinaConsultar))))
                                              .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                              .addComponent(jLabel7))
-                                        .addGap(38, 38, 38)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                             .addComponent(CompetenciaActualizar)
+                                             .addGroup(layout.createSequentialGroup()
+                                                  .addGap(38, 38, 38)
+                                                  .addComponent(CompetenciaActualizar))
                                              .addGroup(layout.createSequentialGroup()
                                                   .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                       .addComponent(DisciplinaActualizar)
-                                                       .addComponent(PruebaActualizar)
-                                                       .addComponent(VisorActualizar)
-                                                       .addComponent(MarcaActualizar))
-                                                  .addGap(41, 41, 41)
+                                                       .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                            .addComponent(VisorActualizar))
+                                                       .addGroup(layout.createSequentialGroup()
+                                                            .addGap(38, 38, 38)
+                                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                 .addComponent(DisciplinaActualizar)
+                                                                 .addComponent(PruebaActualizar)
+                                                                 .addComponent(MarcaActualizar))))
+                                                  .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                   .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                        .addComponent(MarcaEliminar)
                                                        .addComponent(VisorEliminar)
@@ -373,7 +385,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                                                        .addComponent(PruebaEliminar)
                                                        .addComponent(CompetenciaEliminar)
                                                        .addComponent(AtletaEliminar))))))
-                              .addGap(0, 14, Short.MAX_VALUE))
+                              .addGap(0, 0, Short.MAX_VALUE))
                          .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addContainerGap())
                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -421,8 +433,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                     .addGap(25, 25, 25)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                          .addComponent(jLabel7)
-                         .addComponent(jButton1)
-                         .addComponent(VisorConsultar)
+                         .addComponent(AgregarVisor)
                          .addComponent(VisorActualizar)
                          .addComponent(VisorEliminar))
                     .addGap(28, 28, 28)
@@ -447,6 +458,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void PruebaConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PruebaConsultarActionPerformed
         // TODO add your handling code here:
+        dispose();
+        ConsultarPrueba window = new ConsultarPrueba();
+        window.setVisible(true);
     }//GEN-LAST:event_PruebaConsultarActionPerformed
 
     private void DisciplinaAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisciplinaAgregarActionPerformed
@@ -459,10 +473,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void DisciplinaConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisciplinaConsultarActionPerformed
         // TODO add your handling code here:
+        dispose();
+         ConsultarDisciplina agregarAtletaW = new ConsultarDisciplina();
+         agregarAtletaW.setVisible(true);
     }//GEN-LAST:event_DisciplinaConsultarActionPerformed
 
     private void CompetenciaAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompetenciaAgregarActionPerformed
         // TODO add your handling code here:
+        dispose();
+         AgregarCompetencia agregarAtletaW = new AgregarCompetencia();
+         agregarAtletaW.setVisible(true);
     }//GEN-LAST:event_CompetenciaAgregarActionPerformed
 
     private void CompetenciaConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompetenciaConsultarActionPerformed
@@ -505,21 +525,44 @@ public class MenuPrincipal extends javax.swing.JFrame {
      private void CompetenciaActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompetenciaActualizarActionPerformed
           // TODO add your handling code here:}
           dispose();
-        ActualizarCompetencia window = new ActualizarCompetencia();
-        window.setVisible(true);
+          ActualizarCompetencia window = new ActualizarCompetencia();
+          window.setVisible(true);
      }//GEN-LAST:event_CompetenciaActualizarActionPerformed
 
-     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+     private void AgregarVisorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarVisorActionPerformed
           // TODO add your handling code here:
-     }//GEN-LAST:event_jButton1ActionPerformed
+          dispose();
+         AgregarVisor agregarAtletaW = new AgregarVisor();
+         agregarAtletaW.setVisible(true);
+     }//GEN-LAST:event_AgregarVisorActionPerformed
 
      private void MarcaAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MarcaAgregarActionPerformed
           // TODO add your handling code here:
+          dispose();
+          AddMarcasComp addmarcas = new AddMarcasComp();
+          addmarcas.setVisible(true);
      }//GEN-LAST:event_MarcaAgregarActionPerformed
 
      private void ConfigButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfigButtonActionPerformed
           // TODO add your handling code here:
+          dispose();
+          ConfiguracionFrame window = new ConfiguracionFrame();
+          window.setVisible(true);
      }//GEN-LAST:event_ConfigButtonActionPerformed
+
+     private void DisciplinaActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisciplinaActualizarActionPerformed
+          // TODO add your handling code here:
+          dispose();
+          ActualizarDisciplina window = new ActualizarDisciplina();
+          window.setVisible(true);
+     }//GEN-LAST:event_DisciplinaActualizarActionPerformed
+
+     private void PruebaActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PruebaActualizarActionPerformed
+          // TODO add your handling code here:
+          dispose();
+          ActualizarPrueba window = new ActualizarPrueba();
+          window.setVisible(true);
+     }//GEN-LAST:event_PruebaActualizarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -557,6 +600,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
      // Variables declaration - do not modify//GEN-BEGIN:variables
+     private javax.swing.JButton AgregarVisor;
      private javax.swing.JButton AtletaActualizar;
      private javax.swing.JButton AtletaAgregar;
      private javax.swing.JButton AtletaConsultar;
@@ -579,9 +623,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
      private javax.swing.JButton PruebaConsultar;
      private javax.swing.JButton PruebaEliminar;
      private javax.swing.JButton VisorActualizar;
-     private javax.swing.JButton VisorConsultar;
      private javax.swing.JButton VisorEliminar;
-     private javax.swing.JButton jButton1;
      private javax.swing.JLabel jLabel1;
      private javax.swing.JLabel jLabel2;
      private javax.swing.JLabel jLabel3;

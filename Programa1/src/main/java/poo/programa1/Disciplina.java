@@ -54,5 +54,14 @@ public class Disciplina {
     public boolean getTipo(){
          return tipo;
     }
+
+     public void setNombre(String nombre) {
+          this.nombre = nombre;
+     }
+
+     public void setTipo(boolean tipo) {
+          this.tipo = tipo;
+     }
+    
     
 }

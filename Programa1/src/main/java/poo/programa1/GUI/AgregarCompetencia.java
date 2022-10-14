@@ -186,7 +186,8 @@ public class AgregarCompetencia extends javax.swing.JFrame {
      private void AceptarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarButtonActionPerformed
           // TODO add your handling code here:
           pNombre = NombreTXT.getText();
-         pId = 0;//
+         pId = Configuracion.parametro1;
+         Configuracion.parametro1++;
           pPais = PaisTXT.getText();
           pLugar = LugarTXT.getText();
           

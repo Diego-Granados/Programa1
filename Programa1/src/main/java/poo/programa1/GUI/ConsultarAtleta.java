@@ -189,6 +189,9 @@ public class ConsultarAtleta extends javax.swing.JFrame {
 
     private void marcasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_marcasButtonActionPerformed
         // TODO add your handling code here:
+        dispose();
+          MarcasAtleta window = new MarcasAtleta();
+          window.setVisible(true);
     }//GEN-LAST:event_marcasButtonActionPerformed
 
     private void regresarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regresarButtonActionPerformed

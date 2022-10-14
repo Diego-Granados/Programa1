@@ -47,12 +47,11 @@
                                                   <Component id="AtletaAgregar" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   <Component id="PruebaAgregar" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   <Component id="CompetenciaAgregar" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jButton1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="AgregarVisor" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   <Component id="MarcaAgregar" alignment="0" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace type="separate" max="32767" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="VisorConsultar" min="-2" max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
                                                       <Component id="PruebaConsultar" alignment="1" min="-2" max="-2" attributes="0"/>
                                                       <Component id="CompetenciaConsultar" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -71,17 +70,27 @@
                                   <Component id="jLabel3" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
                                   <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="38" pref="38" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="CompetenciaActualizar" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="38" pref="38" max="-2" attributes="0"/>
+                                      <Component id="CompetenciaActualizar" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="DisciplinaActualizar" min="-2" max="-2" attributes="0"/>
-                                          <Component id="PruebaActualizar" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="VisorActualizar" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="MarcaActualizar" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="VisorActualizar" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="38" pref="38" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="DisciplinaActualizar" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="PruebaActualizar" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="MarcaActualizar" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
                                       </Group>
-                                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="MarcaEliminar" min="-2" max="-2" attributes="0"/>
                                           <Component id="VisorEliminar" min="-2" max="-2" attributes="0"/>
@@ -94,7 +103,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="14" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Component id="jLabel6" alignment="0" max="32767" attributes="0"/>
               </Group>
@@ -152,8 +161,7 @@
               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="VisorConsultar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="AgregarVisor" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="VisorActualizar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="VisorEliminar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -221,6 +229,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Actualizar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PruebaActualizarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="PruebaEliminar">
       <Properties>
@@ -247,6 +258,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Actualizar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DisciplinaActualizarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="DisciplinaEliminar">
       <Properties>
@@ -342,22 +356,17 @@
         <Property name="text" type="java.lang.String" value="Visores"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="AgregarVisor">
       <Properties>
         <Property name="text" type="java.lang.String" value="Agregar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AgregarVisorActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="VisorConsultar">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Consultar"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="VisorActualizar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Actualizar"/>
+        <Property name="text" type="java.lang.String" value="Actualizar listas de pruebas"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="VisorEliminar">

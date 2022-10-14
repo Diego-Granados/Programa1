@@ -13,15 +13,12 @@ import java.util.Map;
  * @author dandi
  */
 public class MarcasPruebas extends javax.swing.JFrame {
-     private Atleta atleta;
      private Prueba prueba;
      private DefaultListModel PaisListModel;
      private DefaultListModel CompetenciaListModel;
      private DefaultListModel MarcaListModel;
      private DefaultListModel LugarListModel;
      private DefaultListModel AtletaListModel;
-     private ArrayList<Marca> marcas;
-     private ArrayList<String> pruebasName;
      private ArrayList<Prueba> pruebas;
      private ArrayList<Competencia> competencias;
      
@@ -49,12 +46,16 @@ public class MarcasPruebas extends javax.swing.JFrame {
      }
      
      private void FillComboPruebas(){
+          int i = 1;
           for(Map.Entry entry : Disciplina.disciplinas.entrySet()){
                Object Items = entry.getValue();
                Disciplina disciplina = (Disciplina)Items;
                for (Prueba pruebaIter : disciplina.pruebas){
-                    ComboPruebas.addItem(pruebaIter.getNombre());
-                    pruebas.add(pruebaIter);
+                    if (i == Configuracion.cantidadMarcas){
+                         ComboPruebas.addItem(pruebaIter.getNombre());
+                         pruebas.add(pruebaIter);
+                         i++;
+                    }
                }              
           }
     }
@@ -110,152 +111,7 @@ public class MarcasPruebas extends javax.swing.JFrame {
           }
           
      }
-     /*
-     private void FillAtletaList(){
-          if (prueba == null){
-               return;
-          }
-          if (AtletaListModel != null){
-               AtletaListModel.removeAllElements();
-          }
-          for (Marca marca : marcas){
-               AtletaListModel.addElement(marca.getPrueba().getNombre());
-               System.out.println("Hola1");
-          }*/
-          /*
-          if (!atleta.getMarcas().isEmpty()){
-               for(Marca marca : atleta.getMarcas()){
-                    if (!pruebasName.contains(marca.getPrueba().getNombre())){              
-                         PruebaListModel.addElement(marca.getPrueba().getNombre());
-                         pruebasName.add(marca.getPrueba().getNombre());
-                         pruebas.add(marca.getPrueba());
-                    }
-               }
-          }
-          */
-//     }
-     /*
-     private void EscogerMarcas(){
-          if (atleta == null){
-               return;
-          }
-          for (Marca marcaIter : atleta.getMarcas()){
-               if (!pruebasName.contains(marcaIter.getPrueba().getNombre())){        
-                    if (!marcaIter.getPrueba().getDisciplina().getTipo()){ // si se mide con tiempo
-                           marcaIter.getPrueba().ordenarMarcasTiempo(marcaIter.getCompetencia());
-                     } else {
-                          marcaIter.getPrueba().ordenarMarcasDistancia(marcaIter.getCompetencia());
-                    }   
-                    pruebasName.add(marcaIter.getPrueba().getNombre());
-                    pruebas.add(marcaIter.getPrueba());
-               }
-          }
-          for (Prueba pruebaIter : pruebas){
-               for (Marca marca : pruebaIter.getMarcas()){
-                    if (marca.getAtleta() == atleta){
-                         marcas.add(marca);
-                         System.out.println("hola 4");
-                         break;
-                    }
-               }
-          }
-     }*/
-     /*
-     private void FillCompetenciaList(){
-          if (atleta == null){
-               return;
-          }
-          if (CompetenciaListModel != null){
-               CompetenciaListModel.removeAllElements();
-          }
-          
-          for (Marca marca : marcas){
-               CompetenciaListModel.addElement(marca.getCompetencia().getNombre());
-               System.out.println("hola 2");
-          }
-          /*
-          if (!prueba.getMarcas().isEmpty()){
-               for(Marca marca : prueba.getMarcas()){
-                    if (marca.getAtleta() != atleta){
-                         continue;
-                    }
-                    String CompName = marca.getCompetencia().getNombre();                    
-                    CompetenciaListModel.addElement(CompName);
-                    if (!competencias.contains(marca.getCompetencia())){
-                         competencias.add(marca.getCompetencia());
-                    }
-               }
-          }
-          */
- //    }
-     /*
-     private void FillMarcaList(){
-          if (atleta == null){
-               return;
-          }
-          if (MarcaListModel != null){
-               MarcaListModel.removeAllElements();
-          }
-          
-          for (Marca marca : marcas){
-               String resultado = new String();
-               if (!marca.getPrueba().getDisciplina().getTipo()){ // si se mide con tiempo
-                    resultado = Marca.convertToString(marca.getResultado());
-               } else {
-                    resultado = Double.toString(marca.getResultado());
-               }                    
-               MarcaListModel.addElement(resultado);
-               System.out.println("hola3");
-          }
-          /*
-          if (!prueba.getMarcas().isEmpty()){
-               marcas = new ArrayList<>();
-               for (Competencia competencia : competencias){
-                    for(Marca marca : competencia.marcas){
-                         if (marca.getPrueba() != prueba || marca.getAtleta() != atleta){
-                              continue;
-                         }
-                         String resultado = new String();
-                         if (!prueba.getDisciplina().getTipo()){ // si se mide con tiempo
-                              prueba.ordenarMarcasTiempo(competencia);
-                              resultado = Marca.convertToString(marca.getResultado());
-                         } else {
-                              prueba.ordenarMarcasDistancia(competencia);
-                              resultado = Double.toString(marca.getResultado());
-                         }                    
-                         MarcaListModel.addElement(resultado);
-                         if (!marcas.contains(marca)){
-                              marcas.add(marca);
-                         }
-                         
-                         break;
-                    }
-               }
-          }
-          */
- //    }
-     /*
-     private void FillLugarList(){
-          if (atleta == null){
-               return;
-          }
-          if (LugarListModel != null){
-               LugarListModel.removeAllElements();
-          }
-          for (Marca marca : marcas){
-               marca.getPrueba().darLugares(marca.getCompetencia());
-               LugarListModel.addElement(marca.getLugar());
-          }
-          /*
-          if (!prueba.getMarcas().isEmpty()){
-               for (Marca marca : marcas){
-                    if (marca.getPrueba() == prueba){
-                         LugarListModel.addElement(marca.getLugar());
-                    }
-               }    
-          }
-          */
-//    }
+    
      
      
      
