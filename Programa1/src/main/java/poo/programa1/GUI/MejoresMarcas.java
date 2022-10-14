@@ -6,6 +6,10 @@ package poo.programa1.GUI;
 import javax.swing.DefaultListModel;
 import poo.programa1.*;
 import java.util.ArrayList;
+import java.util.Map;
+import javax.swing.JOptionPane;
+import javax.mail.*;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  *
@@ -55,7 +59,6 @@ public class MejoresMarcas extends javax.swing.JFrame {
           }
           for (Marca marca : marcas){
                PruebaListModel.addElement(marca.getPrueba().getNombre());
-               System.out.println("Hola1");
           }
           /*
           if (!atleta.getMarcas().isEmpty()){
@@ -89,7 +92,6 @@ public class MejoresMarcas extends javax.swing.JFrame {
                for (Marca marca : pruebaIter.getMarcas()){
                     if (marca.getAtleta() == atleta){
                          marcas.add(marca);
-                         System.out.println("hola 4");
                          break;
                     }
                }
@@ -106,7 +108,6 @@ public class MejoresMarcas extends javax.swing.JFrame {
           
           for (Marca marca : marcas){
                CompetenciaListModel.addElement(marca.getCompetencia().getNombre());
-               System.out.println("hola 2");
           }
           /*
           if (!prueba.getMarcas().isEmpty()){
@@ -140,7 +141,6 @@ public class MejoresMarcas extends javax.swing.JFrame {
                     resultado = Double.toString(marca.getResultado());
                }                    
                MarcaListModel.addElement(resultado);
-               System.out.println("hola3");
           }
           /*
           if (!prueba.getMarcas().isEmpty()){
@@ -220,6 +220,7 @@ public class MejoresMarcas extends javax.swing.JFrame {
           CerrarButton = new javax.swing.JButton();
           jScrollPane4 = new javax.swing.JScrollPane();
           PruebaList = new javax.swing.JList<>();
+          EnviarButton = new javax.swing.JButton();
 
           setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -256,6 +257,13 @@ public class MejoresMarcas extends javax.swing.JFrame {
 
           jScrollPane4.setViewportView(PruebaList);
 
+          EnviarButton.setText("Enviar");
+          EnviarButton.addActionListener(new java.awt.event.ActionListener() {
+               public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    EnviarButtonActionPerformed(evt);
+               }
+          });
+
           javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
           getContentPane().setLayout(layout);
           layout.setHorizontalGroup(
@@ -272,16 +280,19 @@ public class MejoresMarcas extends javax.swing.JFrame {
                               .addGap(52, 52, 52)
                               .addComponent(jLabel3)
                               .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                   .addGroup(layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel2)
-                                        .addGap(27, 27, 27)
-                                        .addComponent(ComboAtletas, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE))
                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel4)
-                                        .addGap(63, 63, 63)))))
+                                        .addGap(63, 63, 63))
+                                   .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                             .addComponent(EnviarButton)
+                                             .addGroup(layout.createSequentialGroup()
+                                                  .addComponent(jLabel2)
+                                                  .addGap(27, 27, 27)
+                                                  .addComponent(ComboAtletas, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)))))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                          .addComponent(CerrarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                          .addGroup(layout.createSequentialGroup()
@@ -307,7 +318,9 @@ public class MejoresMarcas extends javax.swing.JFrame {
                          .addComponent(ComboAtletas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                          .addComponent(CerrarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                          .addComponent(jLabel2))
-                    .addGap(50, 50, 50)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(EnviarButton)
+                    .addGap(20, 20, 20)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                          .addComponent(jLabel5)
                          .addComponent(jLabel6)
@@ -328,6 +341,7 @@ public class MejoresMarcas extends javax.swing.JFrame {
      private void ComboAtletasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboAtletasActionPerformed
           // TODO add your handling code here:
           atleta = (Atleta) Atleta.List.get((String) ComboAtletas.getSelectedItem());
+          
           if (atleta == null){
                return;
           }
@@ -357,6 +371,43 @@ public class MejoresMarcas extends javax.swing.JFrame {
           MenuPrincipal menu = new MenuPrincipal();
           menu.setVisible(true);
      }//GEN-LAST:event_CerrarButtonActionPerformed
+
+     private void EnviarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnviarButtonActionPerformed
+          // TODO add your handling code here:
+          if (atleta == null){
+               return;
+          }
+          String nombreAtleta = atleta.getNombre() + " " + atleta.getApellido1() + " " + atleta.getApellido2();
+          String texto = "Mejores marcas del atleta: " + nombreAtleta +", Identificación: "+ atleta.getId() + 
+                  "\n" + StringUtils.rightPad("Prueba", 50)+ StringUtils.rightPad("Competencia",50) +StringUtils.rightPad("Marca", 20) + StringUtils.rightPad("Lugar",40)+  "\n";
+          
+          for (Marca marca : marcas){
+               String resultado = new String();
+               if (!marca.getPrueba().getDisciplina().getTipo()){ // si se mide con tiempo
+                    resultado = Marca.convertToString(marca.getResultado());
+               } else {
+                    resultado = Double.toString(marca.getResultado());
+               } 
+               texto += StringUtils.rightPad(marca.getPrueba().getNombre(), 50)+ StringUtils.rightPad(marca.getCompetencia().getNombre(),50) 
+                       +StringUtils.rightPad(resultado, 20) + StringUtils.rightPad(Integer.toString(marca.getLugar()),40) + "\n";
+          }
+          
+          for(Map.Entry entry : Atleta.List.entrySet()){
+               Object Items = entry.getValue();
+               
+               Persona visor = (Persona) Items;
+               if (visor instanceof Visor){
+                    try {     
+                         JavaMailUtil.sendMail(visor.getCorreo(), texto, nombreAtleta);
+                         JOptionPane.showMessageDialog(this, "Mensaje enviado con éxito.");
+                    }
+                    catch (MessagingException e){
+                         JOptionPane.showMessageDialog(this, "Mensaje no se pudo enviar.", 
+                              "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+               }
+         }       
+     }//GEN-LAST:event_EnviarButtonActionPerformed
 
      /**
       * @param args the command line arguments
@@ -398,6 +449,7 @@ public class MejoresMarcas extends javax.swing.JFrame {
      private javax.swing.JButton CerrarButton;
      private javax.swing.JComboBox<String> ComboAtletas;
      private javax.swing.JList<String> CompetenciaList;
+     private javax.swing.JButton EnviarButton;
      private javax.swing.JList<String> LugarList;
      private javax.swing.JList<String> MarcaList;
      private javax.swing.JList<String> PruebaList;

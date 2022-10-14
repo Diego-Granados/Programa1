@@ -9,6 +9,8 @@ import poo.programa1.*;
 import java.time.LocalDate;
 
 import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+import java.util.Set;
 import javax.swing.JOptionPane;
 /**
  *
@@ -190,6 +192,14 @@ public class AgregarCompetencia extends javax.swing.JFrame {
           
           if (5 > pNombre.length() || pNombre.length() > 60){
             JOptionPane.showMessageDialog(this, "El nombre debe tener una longitud de 5 a 60 caracteres", 
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+          Set<String> paises = Locale.getISOCountries(Locale.IsoCountryCode.PART1_ALPHA3);
+        
+        pPais = PaisTXT.getText();
+        if (!paises.contains(pPais)){
+             JOptionPane.showMessageDialog(this, "Ese país no existe.", 
                     "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }

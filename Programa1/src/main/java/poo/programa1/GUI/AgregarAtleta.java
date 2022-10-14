@@ -2,9 +2,13 @@ package poo.programa1.GUI;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Locale;
 import javax.swing.JOptionPane;
 import poo.programa1.Atleta;
-
+import java.util.Locale.IsoCountryCode;
+import java.util.HashSet;
+import java.util.Set;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -279,8 +283,14 @@ public class AgregarAtleta extends javax.swing.JFrame {
                     "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
+        Set<String> paises = Locale.getISOCountries(IsoCountryCode.PART1_ALPHA3);
         
         pPais = PaisTXT.getText();
+        if (!paises.contains(pPais)){
+             JOptionPane.showMessageDialog(this, "Ese país no existe.", 
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         try {
             pFecha = LocalDate.parse(FechaTXT.getText(), formatter);
@@ -296,15 +306,14 @@ public class AgregarAtleta extends javax.swing.JFrame {
         
         pTelefono = TelefonoTXT.getText();
         if (pTelefono.length() != 20){
-            JOptionPane.showMessageDialog(this, "La identificación debe tener una longitud de 9 a 20 caracteres.", 
+            JOptionPane.showMessageDialog(this, "El teléfono debe tener una longitud de 20 caracteres.", 
                     "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
         
         Atleta newAthlete = new Atleta( pNombre,  pApellido1,  pApellido2,  pId,  pPais,  pFecha,  pCorreo,  pTelefono);
         String successMessage = "Se creó un atleta con los parámetros " + pNombre + " " + pApellido1 + " " +  pApellido2 + " " +  pId + " " +  pPais + " " +  pFecha + " " +  pCorreo + " " +  pTelefono;
-        JOptionPane.showMessageDialog(this, successMessage);
-     
+        JOptionPane.showMessageDialog(this, successMessage);  
     }//GEN-LAST:event_AceptarAtletaButtonActionPerformed
 
     private void NombreTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreTXTActionPerformed
