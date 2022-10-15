@@ -10,5 +10,5 @@ package poo.programa1;
  */
 public class Configuracion {
     public static int parametro1 = 0;
-    public static int cantidadMarcas = 0;
+    public static int cantidadMarcas = 50;
 }

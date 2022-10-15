@@ -16,7 +16,7 @@ import poo.programa1.*;
  *
  * @author dandi
  */
-public class ActualizarDatosCompetencia extends javax.swing.JFrame {
+public class ActualizarMarca extends javax.swing.JFrame {
       private Competencia competencia;
       private String pNombre;
       private String pPais;
@@ -27,7 +27,7 @@ public class ActualizarDatosCompetencia extends javax.swing.JFrame {
      /**
       * Creates new form ConsultarCompetencia
       */
-     public ActualizarDatosCompetencia() {
+     public ActualizarMarca() {
           initComponents();
           this.setLocationRelativeTo(null);
           FillComboCompetencias();
@@ -68,9 +68,9 @@ public class ActualizarDatosCompetencia extends javax.swing.JFrame {
 
             setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-            jLabel1.setText("Actualizar Competencia");
+            jLabel1.setText("Actualizar Marca");
 
-            jLabel2.setText("Competencia");
+            jLabel2.setText("Marca");
 
             jLabel3.setText("Nombre");
 
@@ -128,7 +128,7 @@ public class ActualizarDatosCompetencia extends javax.swing.JFrame {
                                           .addComponent(LugarTXT)
                                           .addComponent(FechainicioTXT)
                                           .addComponent(FechafinalTXT))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                               .addComponent(CerrarButton, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                               .addComponent(AceptarButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -275,21 +275,23 @@ public class ActualizarDatosCompetencia extends javax.swing.JFrame {
                     }
                }
           } catch (ClassNotFoundException ex) {
-               java.util.logging.Logger.getLogger(ActualizarDatosCompetencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+               java.util.logging.Logger.getLogger(ActualizarMarca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
           } catch (InstantiationException ex) {
-               java.util.logging.Logger.getLogger(ActualizarDatosCompetencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+               java.util.logging.Logger.getLogger(ActualizarMarca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
           } catch (IllegalAccessException ex) {
-               java.util.logging.Logger.getLogger(ActualizarDatosCompetencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+               java.util.logging.Logger.getLogger(ActualizarMarca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
           } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-               java.util.logging.Logger.getLogger(ActualizarDatosCompetencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+               java.util.logging.Logger.getLogger(ActualizarMarca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
           }
+          //</editor-fold>
+          //</editor-fold>
           //</editor-fold>
           //</editor-fold>
 
           /* Create and display the form */
           java.awt.EventQueue.invokeLater(new Runnable() {
                public void run() {
-                    new ActualizarDatosCompetencia().setVisible(true);
+                    new ActualizarMarca().setVisible(true);
                }
           });
      }

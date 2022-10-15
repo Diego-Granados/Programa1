@@ -336,14 +336,17 @@ public class MejoresMarcas extends javax.swing.JFrame {
                
                Persona visor = (Persona) Items;
                if (visor instanceof Visor){
-                    try {     
-                         JavaMailUtil.sendMail(visor.getCorreo(), texto, nombreAtleta);
-                         JOptionPane.showMessageDialog(this, "Mensaje enviado con éxito.");
-                    }
-                    catch (MessagingException e){
-                         JOptionPane.showMessageDialog(this, "Mensaje no se pudo enviar.", 
-                              "Error", JOptionPane.ERROR_MESSAGE);
-                    }
+                     
+                     if (((Visor) visor).getAtletas().contains(atleta)){
+                        try {     
+                              JavaMailUtil.sendMail(visor.getCorreo(), texto, nombreAtleta);
+                              JOptionPane.showMessageDialog(this, "Mensaje enviado con éxito.");
+                         }
+                         catch (MessagingException e){
+                              JOptionPane.showMessageDialog(this, "Mensaje no se pudo enviar.", 
+                                   "Error", JOptionPane.ERROR_MESSAGE);
+                         }
+                    }                    
                }
          }       
      }//GEN-LAST:event_EnviarButtonActionPerformed

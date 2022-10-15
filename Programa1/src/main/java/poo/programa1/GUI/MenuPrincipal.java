@@ -142,312 +142,317 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
     
     @SuppressWarnings("unchecked")
-     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-     private void initComponents() {
+      // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+      private void initComponents() {
 
-          jLabel1 = new javax.swing.JLabel();
-          jLabel2 = new javax.swing.JLabel();
-          jLabel3 = new javax.swing.JLabel();
-          jLabel4 = new javax.swing.JLabel();
-          jLabel5 = new javax.swing.JLabel();
-          jLabel6 = new javax.swing.JLabel();
-          PruebaAgregar = new javax.swing.JButton();
-          PruebaConsultar = new javax.swing.JButton();
-          PruebaActualizar = new javax.swing.JButton();
-          PruebaEliminar = new javax.swing.JButton();
-          DisciplinaAgregar = new javax.swing.JButton();
-          DisciplinaConsultar = new javax.swing.JButton();
-          DisciplinaActualizar = new javax.swing.JButton();
-          DisciplinaEliminar = new javax.swing.JButton();
-          CompetenciaAgregar = new javax.swing.JButton();
-          CompetenciaConsultar = new javax.swing.JButton();
-          CompetenciaActualizar = new javax.swing.JButton();
-          CompetenciaEliminar = new javax.swing.JButton();
-          AtletaAgregar = new javax.swing.JButton();
-          AtletaConsultar = new javax.swing.JButton();
-          AtletaActualizar = new javax.swing.JButton();
-          AtletaEliminar = new javax.swing.JButton();
-          MarcaAgregar = new javax.swing.JButton();
-          MarcaConsultar = new javax.swing.JButton();
-          MarcaActualizar = new javax.swing.JButton();
-          MarcaEliminar = new javax.swing.JButton();
-          jLabel7 = new javax.swing.JLabel();
-          AgregarVisor = new javax.swing.JButton();
-          VisorActualizar = new javax.swing.JButton();
-          VisorEliminar = new javax.swing.JButton();
-          ConfigButton = new javax.swing.JButton();
+            jLabel1 = new javax.swing.JLabel();
+            jLabel2 = new javax.swing.JLabel();
+            jLabel3 = new javax.swing.JLabel();
+            jLabel4 = new javax.swing.JLabel();
+            jLabel5 = new javax.swing.JLabel();
+            jLabel6 = new javax.swing.JLabel();
+            PruebaAgregar = new javax.swing.JButton();
+            PruebaConsultar = new javax.swing.JButton();
+            PruebaActualizar = new javax.swing.JButton();
+            PruebaEliminar = new javax.swing.JButton();
+            DisciplinaAgregar = new javax.swing.JButton();
+            DisciplinaConsultar = new javax.swing.JButton();
+            DisciplinaActualizar = new javax.swing.JButton();
+            DisciplinaEliminar = new javax.swing.JButton();
+            CompetenciaAgregar = new javax.swing.JButton();
+            CompetenciaConsultar = new javax.swing.JButton();
+            CompetenciaActualizar = new javax.swing.JButton();
+            CompetenciaEliminar = new javax.swing.JButton();
+            AtletaAgregar = new javax.swing.JButton();
+            AtletaConsultar = new javax.swing.JButton();
+            AtletaActualizar = new javax.swing.JButton();
+            AtletaEliminar = new javax.swing.JButton();
+            MarcaAgregar = new javax.swing.JButton();
+            MarcaConsultar = new javax.swing.JButton();
+            MarcaActualizar = new javax.swing.JButton();
+            MarcaEliminar = new javax.swing.JButton();
+            jLabel7 = new javax.swing.JLabel();
+            AgregarVisor = new javax.swing.JButton();
+            VisorActualizar = new javax.swing.JButton();
+            VisorEliminar = new javax.swing.JButton();
+            ConfigButton = new javax.swing.JButton();
 
-          setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+            setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-          jLabel1.setText("Menú Principal");
+            jLabel1.setText("Menú Principal");
 
-          jLabel2.setText("Disciplinas");
+            jLabel2.setText("Disciplinas");
 
-          jLabel3.setText("Pruebas");
+            jLabel3.setText("Pruebas");
 
-          jLabel4.setText("Atletas");
+            jLabel4.setText("Atletas");
 
-          jLabel5.setText("Competencias");
+            jLabel5.setText("Competencias");
 
-          jLabel6.setText("Marcas");
+            jLabel6.setText("Marcas");
 
-          PruebaAgregar.setText("Agregar");
-          PruebaAgregar.addActionListener(new java.awt.event.ActionListener() {
-               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    PruebaAgregarActionPerformed(evt);
-               }
-          });
+            PruebaAgregar.setText("Agregar");
+            PruebaAgregar.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        PruebaAgregarActionPerformed(evt);
+                  }
+            });
 
-          PruebaConsultar.setText("Consultar");
-          PruebaConsultar.addActionListener(new java.awt.event.ActionListener() {
-               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    PruebaConsultarActionPerformed(evt);
-               }
-          });
+            PruebaConsultar.setText("Consultar");
+            PruebaConsultar.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        PruebaConsultarActionPerformed(evt);
+                  }
+            });
 
-          PruebaActualizar.setText("Actualizar");
-          PruebaActualizar.addActionListener(new java.awt.event.ActionListener() {
-               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    PruebaActualizarActionPerformed(evt);
-               }
-          });
+            PruebaActualizar.setText("Actualizar");
+            PruebaActualizar.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        PruebaActualizarActionPerformed(evt);
+                  }
+            });
 
-          PruebaEliminar.setText("Eliminar");
+            PruebaEliminar.setText("Eliminar");
 
-          DisciplinaAgregar.setText("Agregar");
-          DisciplinaAgregar.addActionListener(new java.awt.event.ActionListener() {
-               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    DisciplinaAgregarActionPerformed(evt);
-               }
-          });
+            DisciplinaAgregar.setText("Agregar");
+            DisciplinaAgregar.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        DisciplinaAgregarActionPerformed(evt);
+                  }
+            });
 
-          DisciplinaConsultar.setText("Consultar");
-          DisciplinaConsultar.addActionListener(new java.awt.event.ActionListener() {
-               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    DisciplinaConsultarActionPerformed(evt);
-               }
-          });
+            DisciplinaConsultar.setText("Consultar");
+            DisciplinaConsultar.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        DisciplinaConsultarActionPerformed(evt);
+                  }
+            });
 
-          DisciplinaActualizar.setText("Actualizar");
-          DisciplinaActualizar.addActionListener(new java.awt.event.ActionListener() {
-               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    DisciplinaActualizarActionPerformed(evt);
-               }
-          });
+            DisciplinaActualizar.setText("Actualizar");
+            DisciplinaActualizar.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        DisciplinaActualizarActionPerformed(evt);
+                  }
+            });
 
-          DisciplinaEliminar.setText("Eliminar");
+            DisciplinaEliminar.setText("Eliminar");
 
-          CompetenciaAgregar.setText("Agregar");
-          CompetenciaAgregar.addActionListener(new java.awt.event.ActionListener() {
-               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    CompetenciaAgregarActionPerformed(evt);
-               }
-          });
+            CompetenciaAgregar.setText("Agregar");
+            CompetenciaAgregar.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        CompetenciaAgregarActionPerformed(evt);
+                  }
+            });
 
-          CompetenciaConsultar.setText("Consultar");
-          CompetenciaConsultar.addActionListener(new java.awt.event.ActionListener() {
-               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    CompetenciaConsultarActionPerformed(evt);
-               }
-          });
+            CompetenciaConsultar.setText("Consultar");
+            CompetenciaConsultar.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        CompetenciaConsultarActionPerformed(evt);
+                  }
+            });
 
-          CompetenciaActualizar.setText("Actualizar");
-          CompetenciaActualizar.addActionListener(new java.awt.event.ActionListener() {
-               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    CompetenciaActualizarActionPerformed(evt);
-               }
-          });
+            CompetenciaActualizar.setText("Actualizar");
+            CompetenciaActualizar.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        CompetenciaActualizarActionPerformed(evt);
+                  }
+            });
 
-          CompetenciaEliminar.setText("Eliminar");
+            CompetenciaEliminar.setText("Eliminar");
 
-          AtletaAgregar.setText("Agregar");
-          AtletaAgregar.addActionListener(new java.awt.event.ActionListener() {
-               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    AtletaAgregarActionPerformed(evt);
-               }
-          });
+            AtletaAgregar.setText("Agregar");
+            AtletaAgregar.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        AtletaAgregarActionPerformed(evt);
+                  }
+            });
 
-          AtletaConsultar.setText("Consultar");
-          AtletaConsultar.addActionListener(new java.awt.event.ActionListener() {
-               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    AtletaConsultarActionPerformed(evt);
-               }
-          });
+            AtletaConsultar.setText("Consultar");
+            AtletaConsultar.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        AtletaConsultarActionPerformed(evt);
+                  }
+            });
 
-          AtletaActualizar.setText("Actualizar");
-          AtletaActualizar.addActionListener(new java.awt.event.ActionListener() {
-               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    AtletaActualizarActionPerformed(evt);
-               }
-          });
+            AtletaActualizar.setText("Actualizar");
+            AtletaActualizar.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        AtletaActualizarActionPerformed(evt);
+                  }
+            });
 
-          AtletaEliminar.setText("Eliminar");
+            AtletaEliminar.setText("Eliminar");
 
-          MarcaAgregar.setText("Agregar");
-          MarcaAgregar.addActionListener(new java.awt.event.ActionListener() {
-               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    MarcaAgregarActionPerformed(evt);
-               }
-          });
+            MarcaAgregar.setText("Agregar");
+            MarcaAgregar.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        MarcaAgregarActionPerformed(evt);
+                  }
+            });
 
-          MarcaConsultar.setText("Consultar");
-          MarcaConsultar.addActionListener(new java.awt.event.ActionListener() {
-               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    MarcaConsultarActionPerformed(evt);
-               }
-          });
+            MarcaConsultar.setText("Consultar");
+            MarcaConsultar.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        MarcaConsultarActionPerformed(evt);
+                  }
+            });
 
-          MarcaActualizar.setText("Actualizar");
+            MarcaActualizar.setText("Actualizar");
 
-          MarcaEliminar.setText("Eliminar");
+            MarcaEliminar.setText("Eliminar");
 
-          jLabel7.setText("Visores");
+            jLabel7.setText("Visores");
 
-          AgregarVisor.setText("Agregar");
-          AgregarVisor.addActionListener(new java.awt.event.ActionListener() {
-               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    AgregarVisorActionPerformed(evt);
-               }
-          });
+            AgregarVisor.setText("Agregar");
+            AgregarVisor.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        AgregarVisorActionPerformed(evt);
+                  }
+            });
 
-          VisorActualizar.setText("Actualizar listas de pruebas");
+            VisorActualizar.setText("Actualizar listas de pruebas");
+            VisorActualizar.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        VisorActualizarActionPerformed(evt);
+                  }
+            });
 
-          VisorEliminar.setText("Eliminar");
+            VisorEliminar.setText("Eliminar");
 
-          ConfigButton.setText("Configuración");
-          ConfigButton.addActionListener(new java.awt.event.ActionListener() {
-               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    ConfigButtonActionPerformed(evt);
-               }
-          });
+            ConfigButton.setText("Configuración");
+            ConfigButton.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        ConfigButtonActionPerformed(evt);
+                  }
+            });
 
-          javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-          getContentPane().setLayout(layout);
-          layout.setHorizontalGroup(
-               layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                         .addGroup(layout.createSequentialGroup()
-                              .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                   .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(258, 258, 258)
-                                        .addComponent(AtletaActualizar))
-                                   .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                             .addGroup(layout.createSequentialGroup()
-                                                  .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                       .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                       .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                  .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                  .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                       .addGroup(layout.createSequentialGroup()
+            javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+            getContentPane().setLayout(layout);
+            layout.setHorizontalGroup(
+                  layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                              .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                          .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(258, 258, 258)
+                                                .addComponent(AtletaActualizar))
+                                          .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                      .addGroup(layout.createSequentialGroup()
                                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                 .addComponent(AtletaAgregar)
-                                                                 .addComponent(PruebaAgregar)
-                                                                 .addComponent(CompetenciaAgregar)
-                                                                 .addComponent(AgregarVisor)
-                                                                 .addComponent(MarcaAgregar))
-                                                            .addGap(18, 18, Short.MAX_VALUE)
-                                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                      .addComponent(PruebaConsultar, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                      .addComponent(CompetenciaConsultar, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                      .addComponent(AtletaConsultar, javax.swing.GroupLayout.Alignment.TRAILING))
-                                                                 .addComponent(MarcaConsultar)))
-                                                       .addGroup(layout.createSequentialGroup()
-                                                            .addComponent(DisciplinaAgregar)
-                                                            .addGap(37, 37, 37)
-                                                            .addComponent(DisciplinaConsultar))))
-                                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                             .addComponent(jLabel7))
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                             .addGroup(layout.createSequentialGroup()
-                                                  .addGap(38, 38, 38)
-                                                  .addComponent(CompetenciaActualizar))
-                                             .addGroup(layout.createSequentialGroup()
-                                                  .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                       .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                                  .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                  .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                            .addComponent(VisorActualizar))
-                                                       .addGroup(layout.createSequentialGroup()
+                                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                                  .addGroup(layout.createSequentialGroup()
+                                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                              .addComponent(AtletaAgregar)
+                                                                              .addComponent(PruebaAgregar)
+                                                                              .addComponent(CompetenciaAgregar)
+                                                                              .addComponent(AgregarVisor)
+                                                                              .addComponent(MarcaAgregar))
+                                                                        .addGap(18, 18, Short.MAX_VALUE)
+                                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                              .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                    .addComponent(PruebaConsultar, javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                                    .addComponent(CompetenciaConsultar, javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                                    .addComponent(AtletaConsultar, javax.swing.GroupLayout.Alignment.TRAILING))
+                                                                              .addComponent(MarcaConsultar)))
+                                                                  .addGroup(layout.createSequentialGroup()
+                                                                        .addComponent(DisciplinaAgregar)
+                                                                        .addGap(37, 37, 37)
+                                                                        .addComponent(DisciplinaConsultar))))
+                                                      .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                      .addComponent(jLabel7))
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                      .addGroup(layout.createSequentialGroup()
                                                             .addGap(38, 38, 38)
+                                                            .addComponent(CompetenciaActualizar))
+                                                      .addGroup(layout.createSequentialGroup()
                                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                 .addComponent(DisciplinaActualizar)
-                                                                 .addComponent(PruebaActualizar)
-                                                                 .addComponent(MarcaActualizar))))
-                                                  .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                  .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                       .addComponent(MarcaEliminar)
-                                                       .addComponent(VisorEliminar)
-                                                       .addComponent(DisciplinaEliminar)
-                                                       .addComponent(PruebaEliminar)
-                                                       .addComponent(CompetenciaEliminar)
-                                                       .addComponent(AtletaEliminar))))))
-                              .addGap(0, 0, Short.MAX_VALUE))
-                         .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addContainerGap())
-               .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addGap(27, 27, 27)
-                    .addComponent(ConfigButton)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1)
-                    .addGap(243, 243, 243))
-          );
-          layout.setVerticalGroup(
-               layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                         .addComponent(jLabel1)
-                         .addComponent(ConfigButton))
-                    .addGap(22, 22, 22)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                         .addComponent(jLabel2)
-                         .addComponent(DisciplinaConsultar)
-                         .addComponent(DisciplinaAgregar)
-                         .addComponent(DisciplinaActualizar)
-                         .addComponent(DisciplinaEliminar))
-                    .addGap(18, 18, 18)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                         .addComponent(jLabel3)
-                         .addComponent(PruebaAgregar)
-                         .addComponent(PruebaConsultar)
-                         .addComponent(PruebaActualizar)
-                         .addComponent(PruebaEliminar))
-                    .addGap(35, 35, 35)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                         .addComponent(jLabel5)
-                         .addComponent(CompetenciaAgregar)
-                         .addComponent(CompetenciaConsultar)
-                         .addComponent(CompetenciaActualizar)
-                         .addComponent(CompetenciaEliminar))
-                    .addGap(35, 35, 35)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                         .addComponent(jLabel4)
-                         .addComponent(AtletaAgregar)
-                         .addComponent(AtletaConsultar)
-                         .addComponent(AtletaActualizar)
-                         .addComponent(AtletaEliminar))
-                    .addGap(25, 25, 25)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                         .addComponent(jLabel7)
-                         .addComponent(AgregarVisor)
-                         .addComponent(VisorActualizar)
-                         .addComponent(VisorEliminar))
-                    .addGap(28, 28, 28)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                         .addComponent(jLabel6)
-                         .addComponent(MarcaAgregar)
-                         .addComponent(MarcaConsultar)
-                         .addComponent(MarcaActualizar)
-                         .addComponent(MarcaEliminar))
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-          );
+                                                                  .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                        .addComponent(VisorActualizar))
+                                                                  .addGroup(layout.createSequentialGroup()
+                                                                        .addGap(38, 38, 38)
+                                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                              .addComponent(DisciplinaActualizar)
+                                                                              .addComponent(PruebaActualizar)
+                                                                              .addComponent(MarcaActualizar))))
+                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                  .addComponent(MarcaEliminar)
+                                                                  .addComponent(VisorEliminar)
+                                                                  .addComponent(DisciplinaEliminar)
+                                                                  .addComponent(PruebaEliminar)
+                                                                  .addComponent(CompetenciaEliminar)
+                                                                  .addComponent(AtletaEliminar))))))
+                                    .addGap(0, 0, Short.MAX_VALUE))
+                              .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())
+                  .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(ConfigButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1)
+                        .addGap(243, 243, 243))
+            );
+            layout.setVerticalGroup(
+                  layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                              .addComponent(jLabel1)
+                              .addComponent(ConfigButton))
+                        .addGap(22, 22, 22)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                              .addComponent(jLabel2)
+                              .addComponent(DisciplinaConsultar)
+                              .addComponent(DisciplinaAgregar)
+                              .addComponent(DisciplinaActualizar)
+                              .addComponent(DisciplinaEliminar))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                              .addComponent(jLabel3)
+                              .addComponent(PruebaAgregar)
+                              .addComponent(PruebaConsultar)
+                              .addComponent(PruebaActualizar)
+                              .addComponent(PruebaEliminar))
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                              .addComponent(jLabel5)
+                              .addComponent(CompetenciaAgregar)
+                              .addComponent(CompetenciaConsultar)
+                              .addComponent(CompetenciaActualizar)
+                              .addComponent(CompetenciaEliminar))
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                              .addComponent(jLabel4)
+                              .addComponent(AtletaAgregar)
+                              .addComponent(AtletaConsultar)
+                              .addComponent(AtletaActualizar)
+                              .addComponent(AtletaEliminar))
+                        .addGap(25, 25, 25)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                              .addComponent(jLabel7)
+                              .addComponent(AgregarVisor)
+                              .addComponent(VisorActualizar)
+                              .addComponent(VisorEliminar))
+                        .addGap(28, 28, 28)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                              .addComponent(jLabel6)
+                              .addComponent(MarcaAgregar)
+                              .addComponent(MarcaConsultar)
+                              .addComponent(MarcaActualizar)
+                              .addComponent(MarcaEliminar))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            );
 
-          pack();
-     }// </editor-fold>//GEN-END:initComponents
+            pack();
+      }// </editor-fold>//GEN-END:initComponents
 
     private void PruebaAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PruebaAgregarActionPerformed
         // TODO add your handling code here:
@@ -564,6 +569,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
           window.setVisible(true);
      }//GEN-LAST:event_PruebaActualizarActionPerformed
 
+      private void VisorActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisorActualizarActionPerformed
+            // TODO add your handling code here:
+            dispose();
+          ActualizarListaAtletas window = new ActualizarListaAtletas();
+          window.setVisible(true);
+      }//GEN-LAST:event_VisorActualizarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -599,37 +611,37 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
     }
 
-     // Variables declaration - do not modify//GEN-BEGIN:variables
-     private javax.swing.JButton AgregarVisor;
-     private javax.swing.JButton AtletaActualizar;
-     private javax.swing.JButton AtletaAgregar;
-     private javax.swing.JButton AtletaConsultar;
-     private javax.swing.JButton AtletaEliminar;
-     private javax.swing.JButton CompetenciaActualizar;
-     private javax.swing.JButton CompetenciaAgregar;
-     private javax.swing.JButton CompetenciaConsultar;
-     private javax.swing.JButton CompetenciaEliminar;
-     private javax.swing.JButton ConfigButton;
-     private javax.swing.JButton DisciplinaActualizar;
-     private javax.swing.JButton DisciplinaAgregar;
-     private javax.swing.JButton DisciplinaConsultar;
-     private javax.swing.JButton DisciplinaEliminar;
-     private javax.swing.JButton MarcaActualizar;
-     private javax.swing.JButton MarcaAgregar;
-     private javax.swing.JButton MarcaConsultar;
-     private javax.swing.JButton MarcaEliminar;
-     private javax.swing.JButton PruebaActualizar;
-     private javax.swing.JButton PruebaAgregar;
-     private javax.swing.JButton PruebaConsultar;
-     private javax.swing.JButton PruebaEliminar;
-     private javax.swing.JButton VisorActualizar;
-     private javax.swing.JButton VisorEliminar;
-     private javax.swing.JLabel jLabel1;
-     private javax.swing.JLabel jLabel2;
-     private javax.swing.JLabel jLabel3;
-     private javax.swing.JLabel jLabel4;
-     private javax.swing.JLabel jLabel5;
-     private javax.swing.JLabel jLabel6;
-     private javax.swing.JLabel jLabel7;
-     // End of variables declaration//GEN-END:variables
+      // Variables declaration - do not modify//GEN-BEGIN:variables
+      private javax.swing.JButton AgregarVisor;
+      private javax.swing.JButton AtletaActualizar;
+      private javax.swing.JButton AtletaAgregar;
+      private javax.swing.JButton AtletaConsultar;
+      private javax.swing.JButton AtletaEliminar;
+      private javax.swing.JButton CompetenciaActualizar;
+      private javax.swing.JButton CompetenciaAgregar;
+      private javax.swing.JButton CompetenciaConsultar;
+      private javax.swing.JButton CompetenciaEliminar;
+      private javax.swing.JButton ConfigButton;
+      private javax.swing.JButton DisciplinaActualizar;
+      private javax.swing.JButton DisciplinaAgregar;
+      private javax.swing.JButton DisciplinaConsultar;
+      private javax.swing.JButton DisciplinaEliminar;
+      private javax.swing.JButton MarcaActualizar;
+      private javax.swing.JButton MarcaAgregar;
+      private javax.swing.JButton MarcaConsultar;
+      private javax.swing.JButton MarcaEliminar;
+      private javax.swing.JButton PruebaActualizar;
+      private javax.swing.JButton PruebaAgregar;
+      private javax.swing.JButton PruebaConsultar;
+      private javax.swing.JButton PruebaEliminar;
+      private javax.swing.JButton VisorActualizar;
+      private javax.swing.JButton VisorEliminar;
+      private javax.swing.JLabel jLabel1;
+      private javax.swing.JLabel jLabel2;
+      private javax.swing.JLabel jLabel3;
+      private javax.swing.JLabel jLabel4;
+      private javax.swing.JLabel jLabel5;
+      private javax.swing.JLabel jLabel6;
+      private javax.swing.JLabel jLabel7;
+      // End of variables declaration//GEN-END:variables
 }
