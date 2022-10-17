@@ -6,24 +6,22 @@ package poo.programa1.GUI;
 
 import java.util.Map;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 import poo.programa1.*;
 
 /**
  *
  * @author dandi
  */
-public class ConsultarDisciplina extends javax.swing.JFrame {
+public class EliminarDisciplina extends javax.swing.JFrame {
      private Disciplina disciplina;
-     private DefaultListModel PruebaListModel;
      
      /**
       * Creates new form ConsultarCompetencia
       */
-     public ConsultarDisciplina() {
+     public EliminarDisciplina() {
           initComponents();
           this.setLocationRelativeTo(null);
-          PruebaListModel = new DefaultListModel();
-          PruebaList.setModel(PruebaListModel);
           FillComboDisciplinas();
           ComboDisciplinas.setSelectedItem(null);
           
@@ -31,23 +29,14 @@ public class ConsultarDisciplina extends javax.swing.JFrame {
      }
 
      private void FillComboDisciplinas(){
+           ComboDisciplinas.removeAllItems();
           for(Map.Entry entry : Disciplina.disciplinas.entrySet()){
                Object Items = entry.getKey();
                ComboDisciplinas.addItem((String) Items);
           }
      }
      
-     private void FillPruebaList(){
-          if (disciplina == null){
-               return;
-          }
-          if (PruebaListModel != null){
-               PruebaListModel.removeAllElements();
-          }
-          for (Prueba prueba :disciplina.pruebas){
-               PruebaListModel.addElement(prueba.getNombre());
-          }
-     }
+     
      
      /**
       * This method is called from within the constructor to initialize the
@@ -61,26 +50,18 @@ public class ConsultarDisciplina extends javax.swing.JFrame {
             jLabel1 = new javax.swing.JLabel();
             jLabel2 = new javax.swing.JLabel();
             jLabel3 = new javax.swing.JLabel();
-            jLabel4 = new javax.swing.JLabel();
-            jLabel5 = new javax.swing.JLabel();
             ComboDisciplinas = new javax.swing.JComboBox<>();
             CerrarButton = new javax.swing.JButton();
-            jScrollPane1 = new javax.swing.JScrollPane();
-            PruebaList = new javax.swing.JList<>();
             Nombre = new javax.swing.JLabel();
-            TipoMedida = new javax.swing.JLabel();
+            BorrarButton = new javax.swing.JButton();
 
             setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-            jLabel1.setText("Consultar Disciplina");
+            jLabel1.setText("Eliminar Disciplina");
 
             jLabel2.setText("Disciplina");
 
             jLabel3.setText("Nombre");
-
-            jLabel4.setText("Tipo de medida");
-
-            jLabel5.setText("Pruebas");
 
             ComboDisciplinas.addActionListener(new java.awt.event.ActionListener() {
                   public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,11 +76,14 @@ public class ConsultarDisciplina extends javax.swing.JFrame {
                   }
             });
 
-            jScrollPane1.setViewportView(PruebaList);
-
             Nombre.setText(" ");
 
-            TipoMedida.setText(" ");
+            BorrarButton.setText("Borrar");
+            BorrarButton.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        BorrarButtonActionPerformed(evt);
+                  }
+            });
 
             javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
             getContentPane().setLayout(layout);
@@ -109,25 +93,21 @@ public class ConsultarDisciplina extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                               .addComponent(jLabel2)
-                              .addComponent(jLabel3)
-                              .addComponent(jLabel4)
-                              .addComponent(jLabel5))
-                        .addGap(38, 38, 38)
+                              .addComponent(jLabel3))
+                        .addGap(66, 66, 66)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                               .addComponent(ComboDisciplinas, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                              .addComponent(Nombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                               .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                          .addComponent(TipoMedida, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                          .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(0, 44, Short.MAX_VALUE))
-                              .addComponent(Nombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, 0)
-                        .addComponent(CerrarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(CerrarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                                    .addComponent(BorrarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(13, 13, 13)))
+                        .addContainerGap(85, Short.MAX_VALUE))
                   .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1)
-                        .addGap(171, 171, 171))
+                        .addGap(165, 165, 165))
             );
             layout.setVerticalGroup(
                   layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,26 +121,11 @@ public class ConsultarDisciplina extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                               .addComponent(jLabel3)
                               .addComponent(Nombre))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                              .addGroup(layout.createSequentialGroup()
-                                    .addGap(36, 36, 36)
-                                    .addComponent(CerrarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                              .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                          .addGroup(layout.createSequentialGroup()
-                                                .addGap(27, 27, 27)
-                                                .addComponent(jLabel4))
-                                          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(TipoMedida)))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                          .addGroup(layout.createSequentialGroup()
-                                                .addGap(23, 23, 23)
-                                                .addComponent(jLabel5))
-                                          .addGroup(layout.createSequentialGroup()
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addContainerGap(42, Short.MAX_VALUE))
+                        .addGap(54, 54, 54)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                              .addComponent(CerrarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                              .addComponent(BorrarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(39, Short.MAX_VALUE))
             );
 
             pack();
@@ -180,15 +145,31 @@ public class ConsultarDisciplina extends javax.swing.JFrame {
                return;
           }
           Nombre.setText(disciplina.getNombre());
-          String text;
-          if (disciplina.getTipo()){
-               text = "Distancia";
-          } else {
-               text = "Tiempo"; 
-          }
-          TipoMedida.setText(text);
-          FillPruebaList();
+          
      }//GEN-LAST:event_ComboDisciplinasActionPerformed
+
+      private void BorrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BorrarButtonActionPerformed
+            // TODO add your handling code here:
+            if (disciplina == null){
+                  return;
+            }
+            
+            int input = JOptionPane.showConfirmDialog(null, "¿Desea borrar?", "Selecione una opción...",
+				JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE);
+            // 0=sí, 1=no,
+            if (input == 0){
+                  String nombre = (String) ComboDisciplinas.getSelectedItem();
+                  Disciplina.disciplinas.remove(nombre, disciplina);
+                  for(Map.Entry entry : Competencia.competencias.entrySet()){
+                        Object Items = entry.getValue();
+                        Competencia competencia = (Competencia) Items;
+                        competencia.disciplinasDict.remove(disciplina.getNombre(), disciplina);
+                        competencia.pruebasDict.remove(disciplina);
+                  } 
+                  JOptionPane.showMessageDialog(this, "Disciplina borrada existosamente.");
+            }
+            FillComboDisciplinas();
+      }//GEN-LAST:event_BorrarButtonActionPerformed
 
      /**
       * @param args the command line arguments
@@ -207,36 +188,34 @@ public class ConsultarDisciplina extends javax.swing.JFrame {
                     }
                }
           } catch (ClassNotFoundException ex) {
-               java.util.logging.Logger.getLogger(ConsultarDisciplina.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+               java.util.logging.Logger.getLogger(EliminarDisciplina.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
           } catch (InstantiationException ex) {
-               java.util.logging.Logger.getLogger(ConsultarDisciplina.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+               java.util.logging.Logger.getLogger(EliminarDisciplina.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
           } catch (IllegalAccessException ex) {
-               java.util.logging.Logger.getLogger(ConsultarDisciplina.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+               java.util.logging.Logger.getLogger(EliminarDisciplina.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
           } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-               java.util.logging.Logger.getLogger(ConsultarDisciplina.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+               java.util.logging.Logger.getLogger(EliminarDisciplina.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
           }
+          //</editor-fold>
+          //</editor-fold>
           //</editor-fold>
           //</editor-fold>
 
           /* Create and display the form */
           java.awt.EventQueue.invokeLater(new Runnable() {
                public void run() {
-                    new ConsultarDisciplina().setVisible(true);
+                    new EliminarDisciplina().setVisible(true);
                }
           });
      }
 
       // Variables declaration - do not modify//GEN-BEGIN:variables
+      private javax.swing.JButton BorrarButton;
       private javax.swing.JButton CerrarButton;
       private javax.swing.JComboBox<String> ComboDisciplinas;
       private javax.swing.JLabel Nombre;
-      private javax.swing.JList<String> PruebaList;
-      private javax.swing.JLabel TipoMedida;
       private javax.swing.JLabel jLabel1;
       private javax.swing.JLabel jLabel2;
       private javax.swing.JLabel jLabel3;
-      private javax.swing.JLabel jLabel4;
-      private javax.swing.JLabel jLabel5;
-      private javax.swing.JScrollPane jScrollPane1;
       // End of variables declaration//GEN-END:variables
 }

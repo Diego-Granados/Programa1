@@ -236,6 +236,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
             });
 
             DisciplinaEliminar.setText("Eliminar");
+            DisciplinaEliminar.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        DisciplinaEliminarActionPerformed(evt);
+                  }
+            });
 
             CompetenciaAgregar.setText("Agregar");
             CompetenciaAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -259,6 +264,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
             });
 
             CompetenciaEliminar.setText("Eliminar");
+            CompetenciaEliminar.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        CompetenciaEliminarActionPerformed(evt);
+                  }
+            });
 
             AtletaAgregar.setText("Agregar");
             AtletaAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -282,6 +292,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
             });
 
             AtletaEliminar.setText("Eliminar");
+            AtletaEliminar.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        AtletaEliminarActionPerformed(evt);
+                  }
+            });
 
             MarcaAgregar.setText("Agregar");
             MarcaAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -575,6 +590,27 @@ public class MenuPrincipal extends javax.swing.JFrame {
           ActualizarListaAtletas window = new ActualizarListaAtletas();
           window.setVisible(true);
       }//GEN-LAST:event_VisorActualizarActionPerformed
+
+      private void AtletaEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtletaEliminarActionPerformed
+            // TODO add your handling code here:
+            dispose();
+            EliminarAtleta window = new EliminarAtleta();
+            window.setVisible(true);
+      }//GEN-LAST:event_AtletaEliminarActionPerformed
+
+      private void DisciplinaEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisciplinaEliminarActionPerformed
+            // TODO add your handling code here:
+            dispose();
+            EliminarDisciplina window = new EliminarDisciplina();
+            window.setVisible(true);
+      }//GEN-LAST:event_DisciplinaEliminarActionPerformed
+
+      private void CompetenciaEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompetenciaEliminarActionPerformed
+            // TODO add your handling code here:
+            dispose();
+            EliminarCompetencia window = new EliminarCompetencia();
+            window.setVisible(true);
+      }//GEN-LAST:event_CompetenciaEliminarActionPerformed
 
     /**
      * @param args the command line arguments
