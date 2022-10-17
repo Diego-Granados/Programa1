@@ -8,21 +8,42 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
- *
- * @author dandi
+ * Esta clase representa los atletas.
+ * @author Daniel Granados Retana, 2022104692
+ * @author Diego Granados Retana, 2022158363
  */
 public class Atleta extends Persona {
     private ArrayList<Marca> marcas;
+
+    /**
+     * Constructor de Atleta
+     * @param pNombre
+     * @param pApellido1
+     * @param pApellido2
+     * @param pId
+     * @param pPais
+     * @param pFecha
+     * @param pCorreo
+     * @param pTelefono
+     */
     public Atleta(String pNombre, String pApellido1, String pApellido2, String pId, String pPais, LocalDate pFecha, String pCorreo, String pTelefono){
         super(pNombre, pApellido1, pApellido2, pId, pPais, pFecha, pCorreo, pTelefono);
         marcas = new ArrayList<Marca>();
     }
     
+    /**
+     * Función para agregarle una marca al atleta.
+     * @param pMarca
+     */
     public void agregarMarca(Marca pMarca){
         marcas.add(pMarca);
     }
 
-     public ArrayList<Marca> getMarcas() {
+    /**
+     * Función para obtener la lista de marcas del atleta.
+     * @return el ArrayList de marcas del atleta.
+     */
+    public ArrayList<Marca> getMarcas() {
           return marcas;
      }
     
