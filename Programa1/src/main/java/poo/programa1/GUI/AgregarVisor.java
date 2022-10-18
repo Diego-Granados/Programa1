@@ -320,7 +320,7 @@ public class AgregarVisor extends javax.swing.JFrame {
         }
         
         if (!Atleta.List.isEmpty() && Atleta.List.containsKey(pId)){
-            JOptionPane.showMessageDialog(this, "Ya hay un atleta registrado con esa identificación.", 
+            JOptionPane.showMessageDialog(this, "Ya hay una persona registrada con esa identificación.", 
                     "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }

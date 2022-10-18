@@ -189,4 +189,20 @@ public class Competencia {
         pPrueba.incrementarContador(this);
         this.marcas.add(newMarca);
     }
+    
+    public void agregarMarca(Marca marca){
+        
+        marca.getPrueba().incrementarContador(this);
+        this.marcas.add(marca);
+    }
+    
+    public boolean equals(String pNombre, String pPais, String pLugar, LocalDate pFechainicio, LocalDate pFechafinal){
+          if (this.nombre.equals(pNombre) && this.pais.equals(pPais) && this.lugar.equals(pLugar) && this.fechainicio.isEqual(pFechainicio) && this.fechafinal.isEqual(pFechafinal)){
+                return true;
+            }
+          return false;
+          
+    }
+   
+    
 }

@@ -38,6 +38,10 @@ public class Atleta extends Persona {
     public void agregarMarca(Marca pMarca){
         marcas.add(pMarca);
     }
+    
+    public void borrarMarca(Marca pMarca){
+        marcas.remove(pMarca);
+    }
 
     /**
      * Función para obtener la lista de marcas del atleta.

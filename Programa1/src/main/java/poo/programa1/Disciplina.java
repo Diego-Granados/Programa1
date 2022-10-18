@@ -4,10 +4,8 @@
  */
 package poo.programa1;
 
-import poo.programa1.GUI.*;
 import java.util.ArrayList;
 import java.util.HashMap;
-import javax.swing.JOptionPane;
 
 /**
  * Esta clase se usa para representar las disciplinas de atletismo.

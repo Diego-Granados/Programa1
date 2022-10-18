@@ -110,6 +110,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
                prueba.agregarCompetencia(competencia2);
                double resultado = 15;
                for(Map.Entry entry : Atleta.List.entrySet()){
+                     if (resultado == 10){
+                           resultado--;
+                           continue;
+                     }
                     Object atleta = entry.getValue();
                     if (atleta instanceof Atleta){
                          competencia2.agregarMarca((Atleta) atleta, resultado, prueba);
@@ -174,7 +178,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
             jLabel7 = new javax.swing.JLabel();
             AgregarVisor = new javax.swing.JButton();
             VisorActualizar = new javax.swing.JButton();
-            VisorEliminar = new javax.swing.JButton();
             ConfigButton = new javax.swing.JButton();
 
             setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -213,6 +216,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
             });
 
             PruebaEliminar.setText("Eliminar");
+            PruebaEliminar.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        PruebaEliminarActionPerformed(evt);
+                  }
+            });
 
             DisciplinaAgregar.setText("Agregar");
             DisciplinaAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -313,8 +321,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
             });
 
             MarcaActualizar.setText("Actualizar");
+            MarcaActualizar.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        MarcaActualizarActionPerformed(evt);
+                  }
+            });
 
             MarcaEliminar.setText("Eliminar");
+            MarcaEliminar.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        MarcaEliminarActionPerformed(evt);
+                  }
+            });
 
             jLabel7.setText("Visores");
 
@@ -332,8 +350,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
                   }
             });
 
-            VisorEliminar.setText("Eliminar");
-
             ConfigButton.setText("Configuración");
             ConfigButton.addActionListener(new java.awt.event.ActionListener() {
                   public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -345,75 +361,71 @@ public class MenuPrincipal extends javax.swing.JFrame {
             getContentPane().setLayout(layout);
             layout.setHorizontalGroup(
                   layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                              .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                          .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(258, 258, 258)
-                                                .addComponent(AtletaActualizar))
-                                          .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                      .addGroup(layout.createSequentialGroup()
-                                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                  .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                  .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                                  .addGroup(layout.createSequentialGroup()
-                                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                              .addComponent(AtletaAgregar)
-                                                                              .addComponent(PruebaAgregar)
-                                                                              .addComponent(CompetenciaAgregar)
-                                                                              .addComponent(AgregarVisor)
-                                                                              .addComponent(MarcaAgregar))
-                                                                        .addGap(18, 18, Short.MAX_VALUE)
-                                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                              .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                    .addComponent(PruebaConsultar, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                                    .addComponent(CompetenciaConsultar, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                                    .addComponent(AtletaConsultar, javax.swing.GroupLayout.Alignment.TRAILING))
-                                                                              .addComponent(MarcaConsultar)))
-                                                                  .addGroup(layout.createSequentialGroup()
-                                                                        .addComponent(DisciplinaAgregar)
-                                                                        .addGap(37, 37, 37)
-                                                                        .addComponent(DisciplinaConsultar))))
-                                                      .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                      .addComponent(jLabel7))
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                      .addGroup(layout.createSequentialGroup()
-                                                            .addGap(38, 38, 38)
-                                                            .addComponent(CompetenciaActualizar))
-                                                      .addGroup(layout.createSequentialGroup()
-                                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                  .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                        .addComponent(VisorActualizar))
-                                                                  .addGroup(layout.createSequentialGroup()
-                                                                        .addGap(38, 38, 38)
-                                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                              .addComponent(DisciplinaActualizar)
-                                                                              .addComponent(PruebaActualizar)
-                                                                              .addComponent(MarcaActualizar))))
-                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                  .addComponent(MarcaEliminar)
-                                                                  .addComponent(VisorEliminar)
-                                                                  .addComponent(DisciplinaEliminar)
-                                                                  .addComponent(PruebaEliminar)
-                                                                  .addComponent(CompetenciaEliminar)
-                                                                  .addComponent(AtletaEliminar))))))
-                                    .addGap(0, 0, Short.MAX_VALUE))
-                              .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())
                   .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addComponent(ConfigButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1)
                         .addGap(243, 243, 243))
+                  .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                              .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                              .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(258, 258, 258)
+                                    .addComponent(AtletaActualizar))
+                              .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                          .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                      .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                      .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                      .addGroup(layout.createSequentialGroup()
+                                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                  .addComponent(AtletaAgregar)
+                                                                  .addComponent(PruebaAgregar)
+                                                                  .addComponent(CompetenciaAgregar)
+                                                                  .addComponent(AgregarVisor)
+                                                                  .addComponent(MarcaAgregar))
+                                                            .addGap(18, 18, Short.MAX_VALUE)
+                                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                  .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(PruebaConsultar, javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                        .addComponent(CompetenciaConsultar, javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                        .addComponent(AtletaConsultar, javax.swing.GroupLayout.Alignment.TRAILING))
+                                                                  .addComponent(MarcaConsultar)))
+                                                      .addGroup(layout.createSequentialGroup()
+                                                            .addComponent(DisciplinaAgregar)
+                                                            .addGap(37, 37, 37)
+                                                            .addComponent(DisciplinaConsultar))))
+                                          .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addComponent(jLabel7))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                          .addGroup(layout.createSequentialGroup()
+                                                .addGap(38, 38, 38)
+                                                .addComponent(CompetenciaActualizar))
+                                          .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                            .addComponent(VisorActualizar))
+                                                      .addGroup(layout.createSequentialGroup()
+                                                            .addGap(38, 38, 38)
+                                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                  .addComponent(DisciplinaActualizar)
+                                                                  .addComponent(PruebaActualizar)
+                                                                  .addComponent(MarcaActualizar))))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                      .addComponent(MarcaEliminar)
+                                                      .addComponent(DisciplinaEliminar)
+                                                      .addComponent(PruebaEliminar)
+                                                      .addComponent(CompetenciaEliminar)
+                                                      .addComponent(AtletaEliminar))))))
+                        .addContainerGap(12, Short.MAX_VALUE))
             );
             layout.setVerticalGroup(
                   layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -454,8 +466,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                               .addComponent(jLabel7)
                               .addComponent(AgregarVisor)
-                              .addComponent(VisorActualizar)
-                              .addComponent(VisorEliminar))
+                              .addComponent(VisorActualizar))
                         .addGap(28, 28, 28)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                               .addComponent(jLabel6)
@@ -612,6 +623,28 @@ public class MenuPrincipal extends javax.swing.JFrame {
             window.setVisible(true);
       }//GEN-LAST:event_CompetenciaEliminarActionPerformed
 
+      private void PruebaEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PruebaEliminarActionPerformed
+            // TODO add your handling code here:
+            dispose();
+            EliminarPrueba window = new EliminarPrueba();
+            window.setVisible(true);
+      }//GEN-LAST:event_PruebaEliminarActionPerformed
+
+      private void MarcaActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MarcaActualizarActionPerformed
+            // TODO add your handling code here:
+            dispose();
+            ActualizarMarca window = new ActualizarMarca();
+            window.setVisible(true);
+            
+      }//GEN-LAST:event_MarcaActualizarActionPerformed
+
+      private void MarcaEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MarcaEliminarActionPerformed
+            // TODO add your handling code here:
+            dispose();
+            EliminarMarca window = new EliminarMarca();
+            window.setVisible(true);
+      }//GEN-LAST:event_MarcaEliminarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -671,7 +704,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
       private javax.swing.JButton PruebaConsultar;
       private javax.swing.JButton PruebaEliminar;
       private javax.swing.JButton VisorActualizar;
-      private javax.swing.JButton VisorEliminar;
       private javax.swing.JLabel jLabel1;
       private javax.swing.JLabel jLabel2;
       private javax.swing.JLabel jLabel3;

@@ -10,6 +10,7 @@ import java.time.LocalDate;
 
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Set;
 import javax.swing.JOptionPane;
 /**
@@ -185,7 +186,7 @@ public class AgregarCompetencia extends javax.swing.JFrame {
           // TODO add your handling code here:
           pNombre = NombreTXT.getText();
          pId = Configuracion.parametro1;
-         Configuracion.parametro1++;
+         
           pPais = PaisTXT.getText();
           pLugar = LugarTXT.getText();
           
@@ -229,7 +230,18 @@ public class AgregarCompetencia extends javax.swing.JFrame {
                     "Error", JOptionPane.ERROR_MESSAGE);
             return;
           }
+          for(Map.Entry entry : Competencia.competencias.entrySet()){
+               Object Items = entry.getValue();
+               Competencia competenciaIter = (Competencia) Items;
+               if (competenciaIter.equals(pNombre, pPais, pLugar, pFechainicio, pFechafinal)){
+                     JOptionPane.showMessageDialog(this, "Esa competencia ya está agregada.", 
+                    "Error", JOptionPane.ERROR_MESSAGE);
+                  return;
+               }
+          }
           Competencia competencia = new Competencia( pNombre,  pId,  pPais,  pLugar,  pFechainicio,  pFechafinal);
+          Configuracion.parametro1++;
+          JOptionPane.showMessageDialog(this, "Competencia agregada existosamente.");
      }//GEN-LAST:event_AceptarButtonActionPerformed
 
      private void CancelarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarButtonActionPerformed

@@ -97,7 +97,8 @@ public class MarcasAtleta extends javax.swing.JFrame {
                for (Competencia competencia : competencias){
                     for(Marca marca : competencia.marcas){
                          if (marca.getPrueba() != prueba || marca.getAtleta() != atleta){
-                              continue;
+                               continue;
+                               
                          }
                          String resultado = new String();
                          if (!prueba.getDisciplina().getTipo()){ // si se mide con tiempo
