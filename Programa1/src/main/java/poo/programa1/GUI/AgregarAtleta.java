@@ -303,6 +303,10 @@ public class AgregarAtleta extends javax.swing.JFrame {
         
         pCorreo = CorreoTXT.getText();
         // VALIDAR QUE EXISTA
+        if(!JavaMailUtil.validateEmail(pCorreo)){
+            JOptionPane.showMessageDialog(this, "El correo no es válido.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         
         pTelefono = TelefonoTXT.getText();
         if (pTelefono.length() != 20){

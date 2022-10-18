@@ -220,7 +220,7 @@ public class ActualizarDatosCompetencia extends javax.swing.JFrame {
                     "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-          if (5 > pLugar.length() || pLugar.length() > 60){
+        if (5 > pLugar.length() || pLugar.length() > 60){
             JOptionPane.showMessageDialog(this, "El lugar debe tener una longitud de 5 a 60 caracteres", 
                     "Error", JOptionPane.ERROR_MESSAGE);
             return;

@@ -10,13 +10,22 @@ import java.util.logging.Logger;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import javax.mail.internet.AddressException;
 
 /**
  *
  * @author dandi
  */
 public class JavaMailUtil {
-     public static void sendMail(String recipient, String texto, String atleta) throws MessagingException{
+
+    /**
+     * Método para mandar correos
+     * @param recipient
+     * @param texto
+     * @param atleta
+     * @throws MessagingException
+     */
+    public static void sendMail(String recipient, String texto, String atleta) throws MessagingException{
           Properties properties = new Properties();
           properties.put("mail.smtp.auth", true);
           properties.put("mail.smtp.starttls.enable", true);
@@ -38,6 +47,15 @@ public class JavaMailUtil {
           System.out.println("Message sent successfully");
      }
      
+    /**
+     * Hace el texto del correo
+     * @param session
+     * @param myAccountEmail
+     * @param recipient
+     * @param atleta
+     * @param texto
+     * @return Mensaje
+     */
      private static Message prepareMessage(Session session, String myAccountEmail, String recipient, String atleta, String texto){
           try {
                Message message = new MimeMessage(session);
@@ -51,4 +69,22 @@ public class JavaMailUtil {
           }
           return null;
      }
+    
+    /**
+     * Método que valida sin un correo es válido
+     * @param email
+     * @return verdadero si el correo es válido, falso si no
+     */
+    public static boolean validateEmail(String email) {
+        boolean isValid = false;
+        try {
+            // Crea objeto InternetAddress y valida el correo dado.
+            InternetAddress internetAddress = new InternetAddress(email);
+            internetAddress.validate();
+            isValid = true;
+        } catch (AddressException e) {
+            e.printStackTrace();
+        }
+        return isValid;
+    }
 }

@@ -2,9 +2,10 @@ package poo.programa1.GUI;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+import java.util.Set;
 import javax.swing.JOptionPane;
 import poo.programa1.Atleta;
-
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -287,7 +288,15 @@ public class ActualizarAtleta extends javax.swing.JFrame {
             return;
         }
         
+        Set<String> paises = Locale.getISOCountries(Locale.IsoCountryCode.PART1_ALPHA3);
+        
         pPais = PaisTXT.getText();
+        if (!paises.contains(pPais)){ // validamos que el pais sea valido
+             JOptionPane.showMessageDialog(this, "Ese país no existe.", 
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         try {
             pFecha = LocalDate.parse(FechaTXT.getText(), formatter);
@@ -300,6 +309,10 @@ public class ActualizarAtleta extends javax.swing.JFrame {
         
         pCorreo = CorreoTXT.getText();
         // VALIDAR QUE EXISTA
+        if(!JavaMailUtil.validateEmail(pCorreo)){
+            JOptionPane.showMessageDialog(this, "El correo no es válido.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         
         pTelefono = TelefonoTXT.getText();
         if (pTelefono.length() != 20){
