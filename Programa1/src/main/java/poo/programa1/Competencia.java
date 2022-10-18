@@ -20,7 +20,7 @@ public class Competencia {
     private LocalDate fechafinal;
 
     /**
-     * Este HashMap alamcena los nombres de las competencias y su objeto relacionado
+     * Este HashMap almacena los nombres de las competencias y su objeto relacionado
      * para poder acceder al objeto con solo el nombre fácilmente.
      */
     public static HashMap<String, Competencia> competencias = new HashMap<>();

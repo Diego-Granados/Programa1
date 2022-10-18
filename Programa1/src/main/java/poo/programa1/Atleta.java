@@ -32,19 +32,23 @@ public class Atleta extends Persona {
     }
     
     /**
-     * Función para agregarle una marca al atleta.
+     * Método para agregarle una marca al atleta.
      * @param pMarca
      */
     public void agregarMarca(Marca pMarca){
         marcas.add(pMarca);
     }
     
+    /**
+     * Método que borra una marca del atleta.
+     * @param pMarca 
+     */
     public void borrarMarca(Marca pMarca){
         marcas.remove(pMarca);
     }
 
     /**
-     * Función para obtener la lista de marcas del atleta.
+     * Método para obtener la lista de marcas del atleta.
      * @return el ArrayList de marcas del atleta.
      */
     public ArrayList<Marca> getMarcas() {
