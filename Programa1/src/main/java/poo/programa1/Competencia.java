@@ -190,19 +190,29 @@ public class Competencia {
         this.marcas.add(newMarca);
     }
     
+    /**
+     * Método para agregar marca, solo que recibe la marca en sí.
+     * @param marca 
+     */
     public void agregarMarca(Marca marca){
         
         marca.getPrueba().incrementarContador(this);
         this.marcas.add(marca);
     }
     
+    /**
+     * Método que compara si una competencia es igual a esta.
+     * @param pNombre
+     * @param pPais
+     * @param pLugar
+     * @param pFechainicio
+     * @param pFechafinal
+     * @return 
+     */
     public boolean equals(String pNombre, String pPais, String pLugar, LocalDate pFechainicio, LocalDate pFechafinal){
           if (this.nombre.equals(pNombre) && this.pais.equals(pPais) && this.lugar.equals(pLugar) && this.fechainicio.isEqual(pFechainicio) && this.fechafinal.isEqual(pFechafinal)){
                 return true;
             }
           return false;
-          
     }
-   
-    
 }

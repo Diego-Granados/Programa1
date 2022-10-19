@@ -10,7 +10,7 @@ import poo.programa1.*;
 
 /**
  *
- * @author dandi
+ * @author Daniel y Diego Granados
  */
 public class MarcasCompetencia extends javax.swing.JFrame {
      private Disciplina disciplina;
@@ -25,7 +25,7 @@ public class MarcasCompetencia extends javax.swing.JFrame {
       */
      public MarcasCompetencia() {
           initComponents();
-          this.setLocationRelativeTo(null);
+          this.setLocationRelativeTo(null); // hace que la pantalla esté en el centro
           AtletaListModel = new DefaultListModel();
           AtletaList.setModel(AtletaListModel);
           DorsalListModel = new DefaultListModel();
@@ -38,18 +38,18 @@ public class MarcasCompetencia extends javax.swing.JFrame {
           ComboCompetencias.setSelectedItem(null);
           ComboDisciplinas.setSelectedItem(null);
           ComboPruebas.setSelectedItem(null);
-          
-          
      }
 
+     
+// Esta función llena el combo box de combo disciplinas
      private void FillComboDisciplinas(){
-          if (competencia == null){
+          if (competencia == null){ // si la competencia está vacía, significa que no se ha escogido, por lo que no se puede llenar
                return;
           }
           
-          ComboDisciplinas.removeAllItems();
-          if (!competencia.disciplinasDict.isEmpty()){
-               for(Map.Entry entry : competencia.disciplinasDict.entrySet()){
+          ComboDisciplinas.removeAllItems(); // Se eliminan todos los elementos en caso de escoger otra competencia
+          if (!competencia.disciplinasDict.isEmpty()){ // si la competencia tiene disciplinas
+               for(Map.Entry entry : competencia.disciplinasDict.entrySet()){ // recorre el hash map y llena el combo box
                     Object Items = entry.getKey();
                     ComboDisciplinas.addItem((String) Items);
                }
@@ -57,40 +57,41 @@ public class MarcasCompetencia extends javax.swing.JFrame {
      }
      
      private void FillComboCompetencias(){
-          if (!Competencia.competencias.isEmpty() ){
-               for(Map.Entry entry : Competencia.competencias.entrySet()){
+          if (!Competencia.competencias.isEmpty() ){ // si existen competencias
+               for(Map.Entry entry : Competencia.competencias.entrySet()){ // recorre el hash map y llena el combo box
                     Object Items = entry.getKey();
                     ComboCompetencias.addItem((String) Items);
                }
           }
      }
      
+     // Esta función llena la lista de atletas
      private void FillAtletaList(){
           if (prueba == null){
                return;
           }
-       //   AtletaList.removeAll();
+          // si el model no existe, quita todos los elementos
           if (AtletaListModel != null){
                AtletaListModel.removeAllElements();
           }
           
-          if (!prueba.getMarcas().isEmpty()){
-               for(Marca marca : prueba.getMarcas()){
-                    if (marca.getCompetencia() != competencia){
+          if (!prueba.getMarcas().isEmpty()){ // si la prueba tiene marcas
+               for(Marca marca : prueba.getMarcas()){ // recorre cada marca
+                    if (marca.getCompetencia() != competencia){ //  si la competencia de la marca no es igual a la competencia escogida, pasa a la siguiente
                          continue;
                     }
-                    Atleta atleta = marca.getAtleta();
+                    Atleta atleta = marca.getAtleta(); // se establece el atleta que se va a añadir a la lista
                     
-                    AtletaListModel.addElement(atleta.getNombre());
+                    AtletaListModel.addElement(atleta.getNombre()); // se pone el nombre del atleta en la lista
                }
           }
      }
      
+     // es igual a las anteriores
      private void FillDorsalList(){
-          if (prueba == null){
+          if (prueba == null){ // si la prueba es nula, no se ha escogido
                return;
           }
-       //   DorsalList.removeAll();
           if (DorsalListModel != null){
                DorsalListModel.removeAllElements();
           }
@@ -107,11 +108,11 @@ public class MarcasCompetencia extends javax.swing.JFrame {
           }
      }
      
+     // es igual a las anteriores
      private void FillLugarList(){
           if (prueba == null){
                return;
           }
-       //   LugarList.removeAll();
           if (LugarListModel != null){
                LugarListModel.removeAllElements();
           }
@@ -128,31 +129,32 @@ public class MarcasCompetencia extends javax.swing.JFrame {
           }
      }
      
+     
      private void FillMarcaList(){
           if (prueba == null){
                return;
           }
-       //   MarcaList.removeAll();
           if (MarcaListModel != null){
                MarcaListModel.removeAllElements();
           }
           
           if (!prueba.getMarcas().isEmpty()){
-               for(Marca marca : prueba.getMarcas()){
-                    if (marca.getCompetencia() != competencia){
+               for(Marca marca : prueba.getMarcas()){ // recorre la lista de marcas de la prueba
+                    if (marca.getCompetencia() != competencia){ 
                          continue;
                     }
-                     String resultado = new String();
+                     String resultado = new String(); // crea una variable del resultado
                     if (!prueba.getDisciplina().getTipo()){ // si se mide con tiempo
-                         resultado = Marca.convertToString(marca.getResultado());
+                         resultado = Marca.convertToString(marca.getResultado()); // convierte el resultado al formato del tiempo
                     } else {
-                         resultado = Double.toString(marca.getResultado());
+                         resultado = Double.toString(marca.getResultado()); // si no, simplemente convierte el double a string
                     }                    
                     MarcaListModel.addElement(resultado);
                }
           }
      }
      
+     // llena el combo box de pruebas
      private void FillComboPruebas(){
           if (disciplina == null){
                return;
@@ -337,6 +339,7 @@ public class MarcasCompetencia extends javax.swing.JFrame {
             pack();
       }// </editor-fold>//GEN-END:initComponents
 
+      // cierra la ventana actual para volver al menú principal
      private void CerrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerrarButtonActionPerformed
           // TODO add your handling code here:
           dispose();
@@ -346,12 +349,12 @@ public class MarcasCompetencia extends javax.swing.JFrame {
 
      private void ComboCompetenciasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboCompetenciasActionPerformed
           // TODO add your handling code here:
-          competencia = Competencia.competencias.get((String)ComboCompetencias.getSelectedItem());
-          if (competencia == null){
+          competencia = Competencia.competencias.get((String)ComboCompetencias.getSelectedItem()); // obtiene la competencia correcta con base en lo que se seleccionó
+          if (competencia == null){ // si es nulo, no hace nada
                return;
           }
-          FillComboDisciplinas();
-          if (AtletaListModel != null){
+          FillComboDisciplinas(); // llena la lista de disciplinas
+          if (AtletaListModel != null){ // borra los elementos de las listas
                AtletaListModel.removeAllElements();
           }
           if (DorsalListModel != null){
@@ -371,8 +374,8 @@ public class MarcasCompetencia extends javax.swing.JFrame {
                return;
           }
           if (competencia.disciplinasDict.containsKey((String) ComboDisciplinas.getSelectedItem())){
-               disciplina = competencia.disciplinasDict.get((String) ComboDisciplinas.getSelectedItem());
-               FillComboPruebas();
+               disciplina = competencia.disciplinasDict.get((String) ComboDisciplinas.getSelectedItem()); // obtiene la disciplina
+               FillComboPruebas(); // llena las filas
           }
      }//GEN-LAST:event_ComboDisciplinasActionPerformed
 
@@ -385,6 +388,7 @@ public class MarcasCompetencia extends javax.swing.JFrame {
                return;
           }
           
+          // obtiene la prueba seleccionada
           if (competencia.pruebasDict.containsKey(disciplina)){
                for (Prueba pruebaIter : competencia.pruebasDict.get(disciplina)){
                     if (pruebaIter.getNombre() == ComboPruebas.getSelectedItem()){
@@ -392,12 +396,13 @@ public class MarcasCompetencia extends javax.swing.JFrame {
                          break;
                     }
                }
+                // ordena las marcas de la prueba para desplegarlas
                if (disciplina.getTipo()){
                     prueba.ordenarMarcasDistancia(competencia);
                } else {
                     prueba.ordenarMarcasTiempo(competencia);
           }
-               
+               // llena todas las listas
                FillAtletaList();
                FillDorsalList();
                FillMarcaList();

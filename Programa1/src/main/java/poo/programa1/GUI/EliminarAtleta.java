@@ -9,7 +9,10 @@ import poo.programa1.Atleta;
 
 /**
  *
- * @author dandi
+ * @author Daniel y Diego Granados
+ * Todos los eliminar objetos son iguales, borran de la lista los objetos.
+ * La mayoría no borra el objeto en sí ya que consideramos que puede ser que las marcas deberían seguir existiendo
+ * Aún cuando ya el atleta no siga compitiendo.
  */
 public class EliminarAtleta extends javax.swing.JFrame {
 
@@ -115,14 +118,14 @@ public class EliminarAtleta extends javax.swing.JFrame {
       }// </editor-fold>//GEN-END:initComponents
 
       private void BorrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BorrarButtonActionPerformed
-            // TODO add your handling code here:
+            // pide confirmación de la eliminación
             int input = JOptionPane.showConfirmDialog(null, "¿Desea borrar?", "Selecione una opción...",
 				JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE);
             // 0=sí, 1=no,
             if (input == 0){
                   String id = (String) ComboAtletas.getSelectedItem();
                   Atleta atleta = (Atleta) Atleta.List.get(id);
-                  Atleta.List.remove(id, atleta);
+                  Atleta.List.remove(id, atleta); // borra el atleta de la lista
                   JOptionPane.showMessageDialog(this, "Atleta borrado existosamente.");
             }
             FillComboAtletas();

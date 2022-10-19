@@ -340,8 +340,8 @@ public class EliminarMarca extends javax.swing.JFrame {
             }
             int input = JOptionPane.showConfirmDialog(null, "¿Desea borrar?", "Selecione una opción...",
 				JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE);
-            // 0=sí, 1=no,
-            if (input == 0){
+            // 0=sí, 1=no, 
+            if (input == 0){ // se borra la marca de todos los elementos a los que pertenece
                   competencia.marcas.remove(marca);
                 
                   prueba.getMarcas().remove(marca);
@@ -357,7 +357,7 @@ public class EliminarMarca extends javax.swing.JFrame {
 
                   JOptionPane.showMessageDialog(this, "Marca eliminada existosamente.");
             }
-            FillComboCompetencias();
+            FillComboCompetencias(); // se vuelven a llenar los combo boxes 
       }//GEN-LAST:event_BorrarButtonActionPerformed
 
      /**

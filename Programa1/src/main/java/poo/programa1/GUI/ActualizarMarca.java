@@ -10,7 +10,8 @@ import poo.programa1.*;
 
 /**
  *
- * @author dandi
+ * @author Daniel y Diego Granados
+ * En esta clase hay una variable nueva para todos los aspectos de la marca, para tener un lugar donde almacenar los nuevos valores antes de cambiarlos
  */
 public class ActualizarMarca extends javax.swing.JFrame {
      private Disciplina disciplina;
@@ -547,6 +548,7 @@ public class ActualizarMarca extends javax.swing.JFrame {
                   return;
             }
             
+            // valida el nuevo resultado
           if (!pruebaNew.getDisciplina().getTipo()){
                try {
                resultadoNew = Marca.convertToTime(ResultadoNewTXT.getText());
@@ -574,6 +576,8 @@ public class ActualizarMarca extends javax.swing.JFrame {
                    return;
                 }
           }
+          
+          // verifica si hubo cambios en cada aspecto. Si lo hubo, borra la marca del viejo y la mete en el nuevo
           if  (competencia != competenciaNew){
                 competencia.marcas.remove(marca);
                 competenciaNew.agregarMarca(marca);
@@ -587,6 +591,7 @@ public class ActualizarMarca extends javax.swing.JFrame {
                 atletaNew.agregarMarca(marca);
           }
           
+          // modifica los parámetros de la marca
           marca.setAtleta(atletaNew);
           marca.setCompetencia(competenciaNew);
           marca.setPrueba(pruebaNew);
@@ -603,8 +608,9 @@ public class ActualizarMarca extends javax.swing.JFrame {
                     pruebaNew.ordenarMarcasTiempo(competenciaNew);
           }
           
+          // da un mensaje de éxito
           JOptionPane.showMessageDialog(this, "Marca actualizada existosamente.");
-          FillComboCompetencias();
+          FillComboCompetencias(); // vuelve a llenar los combo boxes
       }//GEN-LAST:event_ActualizarButtonActionPerformed
 
      /**

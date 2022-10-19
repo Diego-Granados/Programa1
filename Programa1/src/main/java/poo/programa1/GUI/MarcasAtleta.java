@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author dandi
+ * @author Diego Granados y Daniel Granados
  */
 public class MarcasAtleta extends javax.swing.JFrame {
      private Atleta atleta;
@@ -37,6 +37,7 @@ public class MarcasAtleta extends javax.swing.JFrame {
           FillComboAtletas();
      }
      
+     // llena el combo box de atletas
      private void FillComboAtletas(){
         Atleta.List.forEach((key, value) -> {
             if (value instanceof Atleta){
